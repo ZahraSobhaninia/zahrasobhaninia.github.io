@@ -3,7 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <title>Zahra Sobhaninia</title>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // داده‌های مقاله‌ها
+  const paperData = {
+    "2019": 1,
+    "2020": 2,
+    "2021": 4,
+    "2022": 8,
+    "2023": 5,
+    "2024": 7,
+    "2025": 13,
+    "2026": 1
+  };
 
+  // داده‌های سایتیشن‌ها
+  const citationData = {
+    "2019": 5,
+    "2020": 25,
+    "2021": 50,
+    "2022": 70,
+    "2023": 75,
+    "2024": 135,
+    "2025": 135,
+    "2026": 8
+  };
+
+  const labels = Object.keys(paperData);
+
+  // ----------- Chart 1: Papers
+  new Chart(document.getElementById("papersChart"), {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Number of Papers",
+        data: Object.values(paperData),
+        backgroundColor: "#235784cc"
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  // ----------- Chart 2: Citations
+  new Chart(document.getElementById("citationsChart"), {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Number of Citations",
+        data: Object.values(citationData),
+        backgroundColor: "#76b5c5cc"
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+
+
+  
   <style>
     body {
       margin: 0;
@@ -177,6 +250,12 @@
           Google Scholar
         </a>.
       </p>
+      <div class="section">
+    <h2>📈 Research Stats</h2>
+    <canvas id="papersChart" height="200"></canvas>
+    <canvas id="citationsChart" height="200" style="margin-top: 40px;"></canvas>
+</div>
+
     </div>
 
   </div>
