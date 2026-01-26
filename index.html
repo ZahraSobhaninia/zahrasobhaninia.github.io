@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Zahra Sobhaninia</title>
 
-  <!-- Chart.js Library -->
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
@@ -24,6 +24,8 @@
       border-radius: 14px;
       box-shadow: 0 10px 30px rgba(35, 87, 132, 0.15);
     }
+
+    /* ---------- TOP SECTION ---------- */
 
     .top-section {
       display: flex;
@@ -70,12 +72,13 @@
 
     .profile-image img {
       width: 260px;
-      max-width: 100%;
       border-radius: 50%;
       background: #f0f6fc;
       padding: 6px;
       box-shadow: 0 8px 20px rgba(35, 87, 132, 0.18);
     }
+
+    /* ---------- SECTIONS ---------- */
 
     .section {
       margin-top: 42px;
@@ -97,9 +100,32 @@
       line-height: 1.5;
     }
 
-    a {
-      color: #235784;
+    /* ---------- CHARTS ---------- */
+
+    .charts-wrapper {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
+
+    .chart-box {
+      flex: 1;
+      min-width: 280px;
+      height: 220px;
+      background: #f3f9ff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1);
+    }
+
+    .chart-box canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
 
     @media (max-width: 768px) {
       .top-section {
@@ -116,65 +142,45 @@
         margin-bottom: 20px;
       }
     }
-
-    canvas {
-      margin-top: 30px;
-      max-width: 100%;
-    }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <!-- Top section -->
-    <div class="top-section">
-      <div class="profile-text">
-        <h1>Zahra Sobhaninia</h1>
-        <p>
-          I’m a PhD Fellow in Artificial Intelligence at the University of Copenhagen, working at the Pioneer Centre for AI under the supervision of Prof. Mads Nielsen. My research began with medical image analysis using deep learning during my master’s studies and now focuses on learning from large-scale Electronic Health Record (EHR) data to build clinically meaningful AI systems.
-        </p>
 
-        <div class="links">
-          <a href="mailto:zahra.s@di.ku.dk">Email</a>
-          <a href="https://www.linkedin.com/in/zahra-sobhaninia-48a146b9/" target="_blank">LinkedIn</a>
-          <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-          <a href="https://github.com/ZahraSobhaninia" target="_blank">GitHub</a>
-        </div>
-      </div>
+<div class="container">
 
-      <div class="profile-image">
-        <img src="zahra.jpg" alt="Zahra Sobhaninia">
-      </div>
-    </div>
-
-    <!-- News -->
-    <div class="section">
-      <h2>📰 News</h2>
-      <ul>
-        <li><strong>[Conference]</strong> Participated in the 2026 NLDL Conference and Winter School (Tromsø, Norway), presenting my recent work on surgical outcomes by using EHR.</li>
-        <li><strong>[Teaching]</strong> Teaching Assistant for the “Deep Learning” course at the University of Copenhagen, Fall 2025.</li>
-        <li><strong>[Paper]</strong> Four papers accepted at IEEE EMBC 2025.</li>
-      </ul>
-    </div>
-
-    <!-- Teaching -->
-    <div class="section">
-      <h2>📚 Teaching</h2>
-      <ul>
-        <li>Teaching Assistant – Deep Learning, Fall 2025</li>
-      </ul>
-    </div>
-
-    <!-- Publications -->
-    <div class="section">
-      <h2>📄 Publications</h2>
+  <!-- TOP -->
+  <div class="top-section">
+    <div class="profile-text">
+      <h1>Zahra Sobhaninia</h1>
       <p>
-        See full list on
-        <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank">Google Scholar</a>.
+        I’m a PhD Fellow in Artificial Intelligence at the University of Copenhagen, working at the Pioneer Centre for AI under the supervision of Prof. Mads Nielsen. My research began with medical image analysis using deep learning during my master’s studies and now focuses on learning from large-scale Electronic Health Record (EHR) data to build clinically meaningful AI systems.
       </p>
+
+      <div class="links">
+        <a href="mailto:zahra.s@di.ku.dk">Email</a>
+        <a href="https://www.linkedin.com/in/zahra-sobhaninia-48a146b9/" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a href="https://github.com/ZahraSobhaninia" target="_blank">GitHub</a>
+      </div>
     </div>
 
-  <!-- Charts -->
+    <div class="profile-image">
+      <img src="zahra.jpg" alt="Zahra Sobhaninia">
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <div class="section">
+    <h2>📰 News</h2>
+    <ul>
+      <li><strong>[Conference]</strong> Participated in the 2026 NLDL Conference and Winter School (Tromsø, Norway).</li>
+      <li><strong>[Teaching]</strong> Teaching Assistant for Deep Learning, University of Copenhagen (Fall 2025).</li>
+      <li><strong>[Paper]</strong> Four papers accepted at IEEE EMBC 2025.</li>
+    </ul>
+  </div>
+
+  <!-- STATS -->
   <div class="section">
     <h2>📈 Research Stats</h2>
     <div class="charts-wrapper">
@@ -187,109 +193,55 @@
     </div>
   </div>
 
+</div>
 
-  <!-- JavaScript at END of Body -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const paperData = {
-        "2019": 1,
-        "2020": 2,
-        "2021": 4,
-        "2022": 8,
-        "2023": 5,
-        "2024": 7,
-        "2025": 13,
-        "2026": 1
-      };
+<script>
+  const labels = ["2019","2020","2021","2022","2023","2024","2025","2026"];
 
-      const citationData = {
-        "2019": 5,
-        "2020": 25,
-        "2021": 50,
-        "2022": 70,
-        "2023": 75,
-        "2024": 135,
-        "2025": 135,
-        "2026": 8
-      };
-
-      const labels = Object.keys(paperData);
-
-      new Chart(document.getElementById("papersChart"), {
-        type: "bar",
-        data: {
-          labels: labels,
-          datasets: [{
-            label: "Number of Papers",
-            data: Object.values(paperData),
-            backgroundColor: "#235784cc"
-          }]
-        },
-     options: {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      display: false
+  new Chart(document.getElementById("papersChart"), {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{
+        data: [1,2,4,8,5,7,13,1],
+        backgroundColor: "#235784cc"
+      }]
     },
-    title: {
-      display: true,
-      text: "Number of Papers", // یا Number of Citations برای چارت دوم
-      font: {
-        size: 14
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        title: { display: true, text: "Number of Papers", font: { size: 14 } }
+      },
+      scales: {
+        y: { beginAtZero: true, ticks: { stepSize: 2 } }
       }
     }
-  },
-  scales: {
-    y: {
-      beginAtZero: true,
-      ticks: { stepSize: 2 }
+  });
+
+  new Chart(document.getElementById("citationsChart"), {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{
+        data: [5,25,50,70,75,135,135,8],
+        backgroundColor: "#76b5c5cc"
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        title: { display: true, text: "Number of Citations", font: { size: 14 } }
+      },
+      scales: {
+        y: { beginAtZero: true, ticks: { stepSize: 25 } }
+      }
     }
-  }
-}
-
-      });
-
-      new Chart(document.getElementById("citationsChart"), {
-        type: "bar",
-        data: {
-          labels: labels,
-          datasets: [{
-            label: "Number of Citations",
-            data: Object.values(citationData),
-            backgroundColor: "#76b5c5cc"
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: { beginAtZero: true }
-          }
-        }
-      });
-    });
-  </script>
-  .charts-wrapper {
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.chart-box {
-  flex: 1;
-  min-width: 300px;
-  height: 250px;
-  background: #f3f9ff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1);
-}
-.chart-box canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
+  });
+</script>
 
 </body>
 </html>
