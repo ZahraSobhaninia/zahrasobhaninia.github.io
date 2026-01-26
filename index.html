@@ -3,80 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Zahra Sobhaninia</title>
- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  // داده‌های مقاله‌ها
-  const paperData = {
-    "2019": 1,
-    "2020": 2,
-    "2021": 4,
-    "2022": 8,
-    "2023": 5,
-    "2024": 7,
-    "2025": 13,
-    "2026": 1
-  };
 
-  // داده‌های سایتیشن‌ها
-  const citationData = {
-    "2019": 5,
-    "2020": 25,
-    "2021": 50,
-    "2022": 70,
-    "2023": 75,
-    "2024": 135,
-    "2025": 135,
-    "2026": 8
-  };
+  <!-- Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  const labels = Object.keys(paperData);
-
-  // ----------- Chart 1: Papers
-  new Chart(document.getElementById("papersChart"), {
-    type: "bar",
-    data: {
-      labels: labels,
-      datasets: [{
-        label: "Number of Papers",
-        data: Object.values(paperData),
-        backgroundColor: "#235784cc"
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-
-  // ----------- Chart 2: Citations
-  new Chart(document.getElementById("citationsChart"), {
-    type: "bar",
-    data: {
-      labels: labels,
-      datasets: [{
-        label: "Number of Citations",
-        data: Object.values(citationData),
-        backgroundColor: "#76b5c5cc"
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
-
-
-
-  
   <style>
     body {
       margin: 0;
@@ -95,22 +25,17 @@
       box-shadow: 0 10px 30px rgba(35, 87, 132, 0.15);
     }
 
-    /* ---------- TOP SECTION ---------- */
-
     .top-section {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;              /* فاصله کمتر */
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     .profile-text {
       flex: 1 1 62%;
-      text-align: justify;    /* justify متن */
-    }
-    .profile-text p {
-  text-align: justify;
+      text-align: justify;
     }
 
     .profile-text h1 {
@@ -144,15 +69,13 @@
     }
 
     .profile-image img {
-      width: 260px;           /* عکس بزرگ‌تر */
+      width: 260px;
       max-width: 100%;
       border-radius: 50%;
       background: #f0f6fc;
       padding: 6px;
       box-shadow: 0 8px 20px rgba(35, 87, 132, 0.18);
     }
-
-    /* ---------- SECTIONS ---------- */
 
     .section {
       margin-top: 42px;
@@ -178,8 +101,6 @@
       color: #235784;
     }
 
-    /* ---------- RESPONSIVE ---------- */
-
     @media (max-width: 768px) {
       .top-section {
         flex-direction: column-reverse;
@@ -195,18 +116,20 @@
         margin-bottom: 20px;
       }
     }
+
+    canvas {
+      margin-top: 30px;
+      max-width: 100%;
+    }
   </style>
 </head>
 
 <body>
-
   <div class="container">
-
+    <!-- Top section -->
     <div class="top-section">
-
       <div class="profile-text">
         <h1>Zahra Sobhaninia</h1>
-
         <p>
           I’m a PhD Fellow in Artificial Intelligence at the University of Copenhagen, working at the Pioneer Centre for AI under the supervision of Prof. Mads Nielsen. My research began with medical image analysis using deep learning during my master’s studies and now focuses on learning from large-scale Electronic Health Record (EHR) data to build clinically meaningful AI systems.
         </p>
@@ -220,21 +143,21 @@
       </div>
 
       <div class="profile-image">
-        <!-- اسم فایل عکس رو اینجا بذار -->
         <img src="zahra.jpg" alt="Zahra Sobhaninia">
       </div>
-
     </div>
 
+    <!-- News -->
     <div class="section">
       <h2>📰 News</h2>
       <ul>
-        <li><strong>[Conference]</strong> Participated in the 2026 NLDL Conference and Winter School (Tromsø, Norway), presenting my recent work on surgical outcomes by using EHR. </li>
-        <li><strong>[Teaching]</strong>  Teaching Assistant for the “Deep Learning” course at the University of Copenhagen, Fall 2025. </li>
-        <li><strong>[Paper]</strong> Four papers accepted at IEEE EMBC 2025 </li>
+        <li><strong>[Conference]</strong> Participated in the 2026 NLDL Conference and Winter School (Tromsø, Norway), presenting my recent work on surgical outcomes by using EHR.</li>
+        <li><strong>[Teaching]</strong> Teaching Assistant for the “Deep Learning” course at the University of Copenhagen, Fall 2025.</li>
+        <li><strong>[Paper]</strong> Four papers accepted at IEEE EMBC 2025.</li>
       </ul>
     </div>
 
+    <!-- Teaching -->
     <div class="section">
       <h2>📚 Teaching</h2>
       <ul>
@@ -242,23 +165,86 @@
       </ul>
     </div>
 
+    <!-- Publications -->
     <div class="section">
       <h2>📄 Publications</h2>
       <p>
         See full list on
-        <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank">
-          Google Scholar
-        </a>.
+        <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank">Google Scholar</a>.
       </p>
-      <div class="section">
-    <h2>📈 Research Stats</h2>
-    <canvas id="papersChart" height="200"></canvas>
-    <canvas id="citationsChart" height="200" style="margin-top: 40px;"></canvas>
-</div>
-
     </div>
 
+    <!-- Charts -->
+    <div class="section">
+      <h2>📈 Research Stats</h2>
+      <canvas id="papersChart" height="200"></canvas>
+      <canvas id="citationsChart" height="200"></canvas>
+    </div>
   </div>
 
+  <!-- JavaScript at END of Body -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const paperData = {
+        "2019": 1,
+        "2020": 2,
+        "2021": 4,
+        "2022": 8,
+        "2023": 5,
+        "2024": 7,
+        "2025": 13,
+        "2026": 1
+      };
+
+      const citationData = {
+        "2019": 5,
+        "2020": 25,
+        "2021": 50,
+        "2022": 70,
+        "2023": 75,
+        "2024": 135,
+        "2025": 135,
+        "2026": 8
+      };
+
+      const labels = Object.keys(paperData);
+
+      new Chart(document.getElementById("papersChart"), {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [{
+            label: "Number of Papers",
+            data: Object.values(paperData),
+            backgroundColor: "#235784cc"
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+
+      new Chart(document.getElementById("citationsChart"), {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [{
+            label: "Number of Citations",
+            data: Object.values(citationData),
+            backgroundColor: "#76b5c5cc"
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
