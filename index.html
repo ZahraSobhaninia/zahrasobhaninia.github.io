@@ -174,13 +174,19 @@
       </p>
     </div>
 
-    <!-- Charts -->
-    <div class="section">
-      <h2>📈 Research Stats</h2>
-      <canvas id="papersChart" height="200"></canvas>
-      <canvas id="citationsChart" height="200"></canvas>
+  <!-- Charts -->
+  <div class="section">
+    <h2>📈 Research Stats</h2>
+    <div class="charts-wrapper">
+      <div class="chart-box">
+        <canvas id="papersChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <canvas id="citationsChart"></canvas>
+      </div>
     </div>
   </div>
+
 
   <!-- JavaScript at END of Body -->
   <script>
@@ -219,12 +225,29 @@
             backgroundColor: "#235784cc"
           }]
         },
-        options: {
-          responsive: true,
-          scales: {
-            y: { beginAtZero: true }
-          }
-        }
+     options: {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false
+    },
+    title: {
+      display: true,
+      text: "Number of Papers", // یا Number of Citations برای چارت دوم
+      font: {
+        size: 14
+      }
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      ticks: { stepSize: 2 }
+    }
+  }
+}
+
       });
 
       new Chart(document.getElementById("citationsChart"), {
@@ -246,5 +269,27 @@
       });
     });
   </script>
+  .charts-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.chart-box {
+  flex: 1;
+  min-width: 300px;
+  height: 250px;
+  background: #f3f9ff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1);
+}
+.chart-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 </body>
 </html>
