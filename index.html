@@ -250,25 +250,34 @@
   </div>
 </div>
 
-
-<!-- 📄 Publications & Charts (Two-column layout) -->
+<!-- 📄 Publications -->
 <div class="section">
-  <h2>📄 Selected Publications & Stats</h2>
+  <h2>📄 Publications</h2>
+
+  <!-- Scholar button -->
+  <div style="margin-bottom: 15px;">
+    <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank"
+       style="display: inline-block; padding: 8px 16px; background: #555; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">
+      🎓 Google Scholar Profile
+    </a>
+  </div>
+
+  <!-- Selected papers + stats -->
   <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start;">
-    
-    <!-- LEFT: Publications -->
+
+    <!-- LEFT: Selected Publications -->
     <div style="flex: 1 1 52%;">
-      <ul style="font-size: 15px; line-height: 1.6;">
-        <li>2023 - Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification</li>
-        <li>2024 - Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning</li>
-        <li>2023 - Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation</li>
-        <li>2021 - Determination of Foveal Avascular Zone Parameters Using a New Location-Aware Deep-Learning Method</li>
-        <li>2020 - Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales</li>
-        <li>2019 - Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning</li>
+      <ul style="font-size: 15px; line-height: 1.7; text-align: justify; padding-right: 10px; margin: 0;">
+        <li><strong>2023 –</strong> <strong>Dual-Branch Multi-Task Regressor and Transformer Model</strong> for Endoscopic Image Classification</li>
+        <li><strong>2024 –</strong> <strong>Enhanced Nuclei Segmentation in Histopathological Images</strong> Using a Novel Preprocessing Pipeline and Deep Learning</li>
+        <li><strong>2023 –</strong> <strong>Brain Tumor Segmentation</strong> by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation</li>
+        <li><strong>2021 –</strong> <strong>Determination of Foveal Avascular Zone Parameters</strong> Using a New Location-Aware Deep-Learning Method</li>
+        <li><strong>2020 –</strong> <strong>Brain Tumor Segmentation</strong> by Cascaded Deep Neural Networks Using Multiple Image Scales</li>
+        <li><strong>2019 –</strong> <strong>Fetal Ultrasound Image Segmentation</strong> for Measuring Biometric Parameters Using Multi-Task Deep Learning</li>
       </ul>
     </div>
 
-    <!-- RIGHT: Two stacked charts -->
+    <!-- RIGHT: Stats Charts -->
     <div style="flex: 1 1 40%;">
       <div style="margin-bottom: 30px; background: #f3f9ff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1); height: 220px;">
         <canvas id="papersChart"></canvas>
@@ -280,6 +289,7 @@
 
   </div>
 </div>
+
 
 
 <script>
