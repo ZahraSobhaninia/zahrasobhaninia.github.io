@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <title>Zahra Sobhaninia</title>
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -12,8 +18,8 @@
       margin: 0;
       padding: 0;
       background: linear-gradient(180deg, #d6e9fb 0%, #eef5fc 100%);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
+      font-family: 'Inter', sans-serif;
+      color: #444;
     }
 
     .container {
@@ -25,31 +31,30 @@
       box-shadow: 0 10px 30px rgba(35, 87, 132, 0.15);
     }
 
-    /* ---------- TOP SECTION ---------- */
+    /* ---------- TOP ---------- */
 
     .top-section {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      gap: 30px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .profile-text {
-      flex: 1 1 62%;
+      flex: 1;
       text-align: justify;
     }
 
     .profile-text h1 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      font-size: 30px;
-      color: #235784;
+      margin: 0 0 14px;
+      font-size: 32px;
+      font-weight: 600;
+      color: #1f4f7a;
     }
 
     .profile-text p {
       font-size: 15.5px;
-      line-height: 1.7;
+      line-height: 1.8;
       margin-bottom: 18px;
     }
 
@@ -57,21 +62,12 @@
       margin-right: 18px;
       font-size: 14.5px;
       text-decoration: none;
-      color: #235784;
+      color: #1f4f7a;
       font-weight: 500;
     }
 
-    .links a:hover {
-      text-decoration: underline;
-    }
-
-    .profile-image {
-      flex: 1 1 34%;
-      text-align: right;
-    }
-
     .profile-image img {
-      width: 260px;
+      width: 240px;
       border-radius: 50%;
       background: #f0f6fc;
       padding: 6px;
@@ -81,13 +77,16 @@
     /* ---------- SECTIONS ---------- */
 
     .section {
-      margin-top: 42px;
+      margin-top: 44px;
     }
 
     .section h2 {
-      font-size: 20px;
-      color: #235784;
-      margin-bottom: 12px;
+      font-size: 21px;
+      color: #1f4f7a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     ul {
@@ -96,66 +95,64 @@
     }
 
     ul li {
-      margin-bottom: 8px;
-      line-height: 1.5;
+      margin-bottom: 10px;
+      line-height: 1.7;
     }
 
-    /* ---------- CHARTS ---------- */
+    /* ---------- PUBLICATIONS + STATS ---------- */
+
+    .pub-stats-wrapper {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .publications {
+      flex: 1.2;
+    }
+
+    .publication-list {
+      list-style: disc;
+      padding-left: 18px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .publication-list li {
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    .pub-link {
+      margin-left: 8px;
+      color: #1f4f7a;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .pub-link:hover {
+      text-decoration: underline;
+    }
+
+    .charts {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
     .chart-box {
-      width: 100%;
       height: 220px;
       background: #f3f9ff;
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1);
-      margin-bottom: 20px;
     }
 
-    .chart-box canvas {
+    canvas {
       width: 100% !important;
       height: 100% !important;
-    }
-
-    /* ---------- PUBLICATIONS ---------- */
-
-    .two-column-wrapper {
-      display: flex;
-      gap: 30px;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .left-column {
-      flex: 1 1 50%;
-    }
-
-    .right-column {
-      flex: 1 1 40%;
-    }
-
-    .publication-list {
-      font-size: 15px;
-      line-height: 1.7;
-      text-align: justify;
-      padding-left: 20px;
-      list-style-type: disc;
-      margin: 0;
-    }
-
-    .publication-list li {
-      margin-bottom: 14px;
-    }
-
-    .pub-link-icon {
-      margin-left: 8px;
-      text-decoration: none;
-      color: #235784;
-      font-size: 14px;
-    }
-
-    .pub-link-icon:hover {
-      text-decoration: underline;
     }
 
     /* ---------- RESPONSIVE ---------- */
@@ -165,18 +162,8 @@
         flex-direction: column-reverse;
         text-align: center;
       }
-
-      .profile-image {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      .two-column-wrapper {
+      .pub-stats-wrapper {
         flex-direction: column;
-      }
-
-      .left-column, .right-column {
-        flex: 1 1 100%;
       }
     }
   </style>
@@ -191,82 +178,70 @@
     <div class="profile-text">
       <h1>Zahra Sobhaninia</h1>
       <p>
-        I’m a PhD Fellow in Artificial Intelligence at the University of Copenhagen, working at the Pioneer Centre for AI under the supervision of Prof. Mads Nielsen. My research began with medical image analysis using deep learning during my master’s studies and now focuses on learning from large-scale Electronic Health Record (EHR) data to build clinically meaningful AI systems.
+        I’m a PhD Fellow in Artificial Intelligence at the University of Copenhagen, working at the Pioneer Centre for AI under the supervision of Prof. Mads Nielsen. My research focuses on learning from large-scale Electronic Health Record (EHR) data and medical imaging to build clinically meaningful AI systems.
       </p>
+
       <div class="links">
         <a href="mailto:zahra.s@di.ku.dk">Email</a>
-        <a href="https://www.linkedin.com/in/zahra-sobhaninia-48a146b9/" target="_blank">LinkedIn</a>
-        <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <a href="https://github.com/ZahraSobhaninia" target="_blank">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ">Google Scholar</a>
+        <a href="https://github.com/ZahraSobhaninia">GitHub</a>
       </div>
     </div>
+
     <div class="profile-image">
       <img src="zahra.jpg" alt="Zahra Sobhaninia">
     </div>
   </div>
 
-  <!-- Education -->
+  <!-- PUBLICATIONS -->
   <div class="section">
-    <h2>🎓 Education</h2>
-    <ul>
-      <li><strong>PhD in AI</strong><br>University of Copenhagen, Denmark<br>Supervisor:
-        <a href="https://di.ku.dk/english/staff/vip/researchers_p1ai/?pure=en/persons/137906" target="_blank">Prof. Mads Nielsen</a>
-      </li>
-      <li><strong>M.Sc. in Software Engineering (AI)</strong><br>Isfahan University of Technology (IUT), Iran<br>Thesis:
-        <em>Medical Image Analysis via Multi-Task Learning</em><br>Supervisor:
-        <a href="https://www.seattleu.edu/directory/profiles/shadrokh-samavi-phd.php" target="_blank">Prof. Shadrokh Samavi</a> and
-        <a href="https://people.iut.ac.ir/en/nader_karimi/professional-profile" target="_blank">Dr. Nader Karimi</a>
-      </li>
-    </ul>
-  </div>
+    <h2><i class="fa-solid fa-book-open"></i> Publications</h2>
 
-  <!-- News -->
-  <div class="section">
-    <h2>📰 News</h2>
-    <ul>
-      <li><strong>[Conference]</strong> Participated in the 2026 NLDL Conference and Winter School (Tromsø, Norway).</li>
-      <li><strong>[Teaching]</strong> Teaching Assistant for Deep Learning, University of Copenhagen (Fall 2025).</li>
-      <li><strong>[Paper]</strong> Four papers accepted at IEEE EMBC 2025.</li>
-    </ul>
-  </div>
+    <div class="pub-stats-wrapper">
 
-  <!-- Research Interests -->
-  <div class="section">
-    <h2>🔬 Research Interests</h2>
-    <ul>
-      <li>AI in Healthcare</li>
-      <li>Medical Image Analysis</li>
-      <li>Computer Vision</li>
-      <li>Deep Learning and LLMs</li>
-      <li>Machine Learning</li>
-    </ul>
-  </div>
-
-  <!-- Publications -->
-  <div class="section">
-    <h2>📄 Publications</h2>
-    <div class="two-column-wrapper">
-
-      <!-- Left column: selected publications -->
-      <div class="left-column">
+      <!-- LEFT -->
+      <div class="publications">
         <ul class="publication-list">
           <li><strong>2025 –</strong> Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification
-            <a href="https://ieeexplore.ieee.org/abstract/document/11252632" target="_blank" class="pub-link-icon">🔗</a></li>
+            <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/11252632" target="_blank">
+              <i class="fa-solid fa-link"></i>
+            </a>
+          </li>
+
           <li><strong>2024 –</strong> Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning
-            <a href="https://ieeexplore.ieee.org/abstract/document/10578993" target="_blank" class="pub-link-icon">🔗</a></li>
+            <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10578993" target="_blank">
+              <i class="fa-solid fa-link"></i>
+            </a>
+          </li>
+
           <li><strong>2023 –</strong> Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809423002677" target="_blank" class="pub-link-icon">🔗</a></li>
+            <a class="pub-link" href="https://www.sciencedirect.com/science/article/abs/pii/S1746809423002677" target="_blank">
+              <i class="fa-solid fa-link"></i>
+            </a>
+          </li>
+
           <li><strong>2021 –</strong> Determination of Foveal Avascular Zone Parameters Using a New Location-Aware Deep-Learning Method
-            <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11843/1184311/Determination-of-foveal-avascular-zone-parameters-using-a-new-location/10.1117/12.2594152.short" target="_blank" class="pub-link-icon">🔗</a></li>
+            <a class="pub-link" href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11843/1184311" target="_blank">
+              <i class="fa-solid fa-link"></i>
+            </a>
+          </li>
+
           <li><strong>2020 –</strong> Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales
-            <a href="https://ieeexplore.ieee.org/abstract/document/9260876" target="_blank" class="pub-link-icon">🔗</a></li>
+            <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/9260876" target="_blank">
+              <i class="fa-solid fa-link"></i>
+            </a>
+          </li>
+
           <li><strong>2019 –</strong> Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning
-            <a href="https://ieeexplore.ieee.org/abstract/document/8856981" target="_blank" class="pub-link-icon">🔗</a></li>
+            <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/8856981" target="_blank">
+              <i class="fa-solid fa-link"></i>
+            </a>
+          </li>
         </ul>
       </div>
 
-      <!-- Right column: stats -->
-      <div class="right-column">
+      <!-- RIGHT -->
+      <div class="charts">
         <div class="chart-box">
           <canvas id="papersChart"></canvas>
         </div>
@@ -280,29 +255,21 @@
 
 </div>
 
-<!-- Chart.js Script -->
 <script>
-  const labels = ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"];
+  const labels = ["2019","2020","2021","2022","2023","2024","2025"];
 
   new Chart(document.getElementById("papersChart"), {
     type: "bar",
     data: {
       labels,
       datasets: [{
-        data: [3, 4, 2, 3, 2, 1, 6, 0],
+        data: [1,1,1,0,1,1,1],
         backgroundColor: "#f48c06cc"
       }]
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        title: { display: true, text: "Number of Papers", font: { size: 14 } }
-      },
-      scales: {
-        y: { beginAtZero: true, ticks: { stepSize: 2 } }
-      }
+      plugins: { legend: { display: false }, title: { display: true, text: "Number of Papers" }},
+      maintainAspectRatio: false
     }
   });
 
@@ -311,20 +278,13 @@
     data: {
       labels,
       datasets: [{
-        data: [7, 42, 69, 98, 101, 137, 139, 9],
+        data: [97,93,40,60,75,135,140],
         backgroundColor: "#76b5c5cc"
       }]
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        title: { display: true, text: "Number of Citations", font: { size: 14 } }
-      },
-      scales: {
-        y: { beginAtZero: true, ticks: { stepSize: 25 } }
-      }
+      plugins: { legend: { display: false }, title: { display: true, text: "Number of Citations" }},
+      maintainAspectRatio: false
     }
   });
 </script>
