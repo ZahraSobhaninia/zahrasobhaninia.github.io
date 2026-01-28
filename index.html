@@ -102,27 +102,60 @@
 
     /* ---------- CHARTS ---------- */
 
-    .charts-wrapper {
-      display: flex;
-      gap: 30px;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
     .chart-box {
-      flex: 1;
-      min-width: 280px;
+      width: 100%;
       height: 220px;
       background: #f3f9ff;
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1);
+      margin-bottom: 20px;
     }
 
     .chart-box canvas {
       width: 100% !important;
       height: 100% !important;
+    }
+
+    /* ---------- PUBLICATIONS ---------- */
+
+    .two-column-wrapper {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .left-column {
+      flex: 1 1 50%;
+    }
+
+    .right-column {
+      flex: 1 1 40%;
+    }
+
+    .publication-list {
+      font-size: 15px;
+      line-height: 1.7;
+      text-align: justify;
+      padding-left: 20px;
+      list-style-type: disc;
+      margin: 0;
+    }
+
+    .publication-list li {
+      margin-bottom: 14px;
+    }
+
+    .pub-link-icon {
+      margin-left: 8px;
+      text-decoration: none;
+      color: #235784;
+      font-size: 14px;
+    }
+
+    .pub-link-icon:hover {
+      text-decoration: underline;
     }
 
     /* ---------- RESPONSIVE ---------- */
@@ -133,41 +166,19 @@
         text-align: center;
       }
 
-      .profile-text {
-        text-align: justify;
-      }
-
       .profile-image {
         text-align: center;
         margin-bottom: 20px;
       }
+
+      .two-column-wrapper {
+        flex-direction: column;
+      }
+
+      .left-column, .right-column {
+        flex: 1 1 100%;
+      }
     }
-  .publication-list {
-  font-size: 15px;
-  line-height: 1.7;
-  text-align: justify;
-  padding-right: 10px;
-  margin: 0;
-  list-style-type: disc;
-}
-
-.publication-list li {
-  margin-bottom: 12px;
-  position: relative;
-}
-
-.pub-link-icon {
-  margin-left: 8px;
-  text-decoration: none;
-  color: #235784;
-  font-size: 14px;
-}
-
-.pub-link-icon:hover {
-  text-decoration: underline;
-}
-
-    
   </style>
 </head>
 
@@ -182,7 +193,6 @@
       <p>
         I’m a PhD Fellow in Artificial Intelligence at the University of Copenhagen, working at the Pioneer Centre for AI under the supervision of Prof. Mads Nielsen. My research began with medical image analysis using deep learning during my master’s studies and now focuses on learning from large-scale Electronic Health Record (EHR) data to build clinically meaningful AI systems.
       </p>
-
       <div class="links">
         <a href="mailto:zahra.s@di.ku.dk">Email</a>
         <a href="https://www.linkedin.com/in/zahra-sobhaninia-48a146b9/" target="_blank">LinkedIn</a>
@@ -190,46 +200,27 @@
         <a href="https://github.com/ZahraSobhaninia" target="_blank">GitHub</a>
       </div>
     </div>
-
     <div class="profile-image">
       <img src="zahra.jpg" alt="Zahra Sobhaninia">
     </div>
   </div>
 
+  <!-- Education -->
+  <div class="section">
+    <h2>🎓 Education</h2>
+    <ul>
+      <li><strong>PhD in AI</strong><br>University of Copenhagen, Denmark<br>Supervisor:
+        <a href="https://di.ku.dk/english/staff/vip/researchers_p1ai/?pure=en/persons/137906" target="_blank">Prof. Mads Nielsen</a>
+      </li>
+      <li><strong>M.Sc. in Software Engineering (AI)</strong><br>Isfahan University of Technology (IUT), Iran<br>Thesis:
+        <em>Medical Image Analysis via Multi-Task Learning</em><br>Supervisor:
+        <a href="https://www.seattleu.edu/directory/profiles/shadrokh-samavi-phd.php" target="_blank">Prof. Shadrokh Samavi</a> and
+        <a href="https://people.iut.ac.ir/en/nader_karimi/professional-profile" target="_blank">Dr. Nader Karimi</a>
+      </li>
+    </ul>
+  </div>
 
-<!-- Education -->
-<div class="section">
-  <h2>🎓 Education</h2>
-  <ul>
-    <li>
-      <strong>PhD in AI</strong><br>
-      University of Copenhagen, Denmark<br>
-      Supervisor:
-      <a href="https://di.ku.dk/english/staff/vip/researchers_p1ai/?pure=en/persons/137906" target="_blank">
-        Prof. Mads Nielsen
-      </a>
-    </li>
-    
-    <li>
-      <strong>M.Sc. in Software Engineering (AI)</strong><br>
-      Isfahan University of Technology (IUT), Iran<br>
-      Thesis: <em>Medical Image Analysis via Multi-Task Learning</em><br>
-      Supervisor:
-      <a href="https://www.seattleu.edu/directory/profiles/shadrokh-samavi-phd.php" target="_blank">
-        Prof. Shadrokh Samavi
-      </a>
-      and
-      <a href="https://people.iut.ac.ir/en/nader_karimi/professional-profile" target="_blank">
-        Dr. Nader Karimi
-      </a>
-    </li>
-  </ul>
-</div>
-
-
-  
-
-  <!-- NEWS -->
+  <!-- News -->
   <div class="section">
     <h2>📰 News</h2>
     <ul>
@@ -240,62 +231,65 @@
   </div>
 
   <!-- Research Interests -->
-<div class="section">
-  <h2>🔬 Research Interests</h2>
-  <ul>
-    <li>AI in Healthcare</li>
-    <li>Medical Image Analysis</li>
-    <li>Computer Vision</li>
-    <li>Deep Learning and LLMs </li>
-    <li>Machine Learning</li>
-  </ul>
+  <div class="section">
+    <h2>🔬 Research Interests</h2>
+    <ul>
+      <li>AI in Healthcare</li>
+      <li>Medical Image Analysis</li>
+      <li>Computer Vision</li>
+      <li>Deep Learning and LLMs</li>
+      <li>Machine Learning</li>
+    </ul>
+  </div>
+
+  <!-- Publications -->
+  <div class="section">
+    <h2>📄 Publications</h2>
+    <div class="two-column-wrapper">
+
+      <!-- Left column: selected publications -->
+      <div class="left-column">
+        <ul class="publication-list">
+          <li><strong>2025 –</strong> Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification
+            <a href="https://ieeexplore.ieee.org/abstract/document/11252632" target="_blank" class="pub-link-icon">🔗</a></li>
+          <li><strong>2024 –</strong> Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning
+            <a href="https://ieeexplore.ieee.org/abstract/document/10578993" target="_blank" class="pub-link-icon">🔗</a></li>
+          <li><strong>2023 –</strong> Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809423002677" target="_blank" class="pub-link-icon">🔗</a></li>
+          <li><strong>2021 –</strong> Determination of Foveal Avascular Zone Parameters Using a New Location-Aware Deep-Learning Method
+            <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11843/1184311/Determination-of-foveal-avascular-zone-parameters-using-a-new-location/10.1117/12.2594152.short" target="_blank" class="pub-link-icon">🔗</a></li>
+          <li><strong>2020 –</strong> Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales
+            <a href="https://ieeexplore.ieee.org/abstract/document/9260876" target="_blank" class="pub-link-icon">🔗</a></li>
+          <li><strong>2019 –</strong> Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning
+            <a href="https://ieeexplore.ieee.org/abstract/document/8856981" target="_blank" class="pub-link-icon">🔗</a></li>
+        </ul>
+      </div>
+
+      <!-- Right column: stats -->
+      <div class="right-column">
+        <div class="chart-box">
+          <canvas id="papersChart"></canvas>
+        </div>
+        <div class="chart-box">
+          <canvas id="citationsChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
-<ul class="publication-list">
-  <li>
-    <strong>2025 –</strong>
-    <strong>Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification</strong>
-    <a href="https://ieeexplore.ieee.org/abstract/document/11252632" target="_blank" class="pub-link-icon">🔗</a>
-  </li>
-  <li>
-    <strong>2024 –</strong>
-    <strong>Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning</strong>
-    <a href="https://ieeexplore.ieee.org/abstract/document/10578993" target="_blank" class="pub-link-icon">🔗</a>
-  </li>
-  <li>
-    <strong>2023 –</strong>
-    <strong>Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation</strong>
-    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809423002677" target="_blank" class="pub-link-icon">🔗</a>
-  </li>
-  <li>
-    <strong>2021 –</strong>
-    <strong>Determination of Foveal Avascular Zone Parameters Using a New Location-Aware Deep-Learning Method</strong>
-    <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11843/1184311/Determination-of-foveal-avascular-zone-parameters-using-a-new-location/10.1117/12.2594152.short" target="_blank" class="pub-link-icon">🔗</a>
-  </li>
-  <li>
-    <strong>2020 –</strong>
-    <strong>Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales</strong>
-    <a href="https://ieeexplore.ieee.org/abstract/document/9260876" target="_blank" class="pub-link-icon">🔗</a>
-  </li>
-  <li>
-    <strong>2019 –</strong>
-    <strong>Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning</strong>
-    <a href="https://ieeexplore.ieee.org/abstract/document/8856981" target="_blank" class="pub-link-icon">🔗</a>
-  </li>
-</ul>
-
-
-
-
+<!-- Chart.js Script -->
 <script>
-  const labels = ["2019","2020","2021","2022","2023","2024","2025","2026"];
+  const labels = ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"];
 
   new Chart(document.getElementById("papersChart"), {
     type: "bar",
     data: {
       labels,
       datasets: [{
-        data: [3,4,2,3,2,1,6,0],
+        data: [3, 4, 2, 3, 2, 1, 6, 0],
         backgroundColor: "#f48c06cc"
       }]
     },
@@ -317,7 +311,7 @@
     data: {
       labels,
       datasets: [{
-        data: [7,42,69,98,101,137,139,9],
+        data: [7, 42, 69, 98, 101, 137, 139, 9],
         backgroundColor: "#76b5c5cc"
       }]
     },
