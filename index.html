@@ -142,6 +142,32 @@
         margin-bottom: 20px;
       }
     }
+  .publication-list {
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: justify;
+  padding-right: 10px;
+  margin: 0;
+  list-style-type: disc;
+}
+
+.publication-list li {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.pub-link-icon {
+  margin-left: 8px;
+  text-decoration: none;
+  color: #235784;
+  font-size: 14px;
+}
+
+.pub-link-icon:hover {
+  text-decoration: underline;
+}
+
+    
   </style>
 </head>
 
@@ -225,70 +251,39 @@
   </ul>
 </div>
 
-  <!-- Publications -->
-<div class="section">
-  <h2>📄 Selected Publications</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+<ul class="publication-list">
+  <li>
+    <strong>2025 –</strong>
+    <strong>Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification</strong>
+    <a href="https://ieeexplore.ieee.org/abstract/document/11252632" target="_blank" class="pub-link-icon">🔗</a>
+  </li>
+  <li>
+    <strong>2024 –</strong>
+    <strong>Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning</strong>
+    <a href="https://ieeexplore.ieee.org/abstract/document/10578993" target="_blank" class="pub-link-icon">🔗</a>
+  </li>
+  <li>
+    <strong>2023 –</strong>
+    <strong>Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation</strong>
+    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809423002677" target="_blank" class="pub-link-icon">🔗</a>
+  </li>
+  <li>
+    <strong>2021 –</strong>
+    <strong>Determination of Foveal Avascular Zone Parameters Using a New Location-Aware Deep-Learning Method</strong>
+    <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11843/1184311/Determination-of-foveal-avascular-zone-parameters-using-a-new-location/10.1117/12.2594152.short" target="_blank" class="pub-link-icon">🔗</a>
+  </li>
+  <li>
+    <strong>2020 –</strong>
+    <strong>Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales</strong>
+    <a href="https://ieeexplore.ieee.org/abstract/document/9260876" target="_blank" class="pub-link-icon">🔗</a>
+  </li>
+  <li>
+    <strong>2019 –</strong>
+    <strong>Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning</strong>
+    <a href="https://ieeexplore.ieee.org/abstract/document/8856981" target="_blank" class="pub-link-icon">🔗</a>
+  </li>
+</ul>
 
-    <!-- Left Column: Paper List -->
-    <div style="flex: 1 1 55%;">
-      <ul style="columns: 2; column-gap: 20px; font-size: 15px; line-height: 1.6;">
-        <li>2023 - Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification</li>
-        <li>2024 - Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning</li>
-        <li>2023 - Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation</li>
-        <li>2021 - Determination of Foveal Avascular Zone Parameters Using A New Location-Aware Deep-Learning Method</li>
-        <li>2020 - Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales</li>
-        <li>2019 - Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning</li>
-      </ul>
-    </div>
-
-    <!-- Right Column: Author Order Chart -->
-    <div style="flex: 1 1 40%;">
-      <canvas id="authorOrderChart" style="height: 220px;"></canvas>
-    </div>
-
-  </div>
-</div>
-
-<!-- 📄 Publications -->
-<div class="section">
-  <h2>📄 Publications</h2>
-
-  <!-- Scholar button -->
-  <div style="margin-bottom: 15px;">
-    <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank"
-       style="display: inline-block; padding: 8px 16px; background: #555; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">
-       Google Scholar Profile
-    </a>
-  </div>
-
-  <!-- Selected papers + stats -->
-  <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start;">
-
-    <!-- LEFT: Selected Publications -->
-    <div style="flex: 1 1 52%;">
-      <ul style="font-size: 15px; line-height: 1.7; text-align: justify; padding-right: 10px; margin: 0;">
-        <li><strong>2023 –</strong> Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification</li>
-        <li><strong>2024 –</strong> Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning</li>
-        <li><strong>2023 –</strong> Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation</li>
-        <li><strong>2021 –</strong> Determination of Foveal Avascular Zone Parameters Using a New Location-Aware Deep-Learning Method</li>
-        <li><strong>2020 –</strong> Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales</li>
-        <li><strong>2019 –</strong> Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning</li>
-      </ul>
-    </div>
-
-    <!-- RIGHT: Stats Charts -->
-    <div style="flex: 1 1 40%;">
-      <div style="margin-bottom: 30px; background: #f3f9ff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1); height: 220px;">
-        <canvas id="papersChart"></canvas>
-      </div>
-      <div style="background: #f3f9ff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1); height: 220px;">
-        <canvas id="citationsChart"></canvas>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 
 
