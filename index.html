@@ -24,6 +24,15 @@
       box-shadow: 0 10px 30px rgba(35, 87, 132, 0.15);
     }
 
+    /* Sticky header */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding-bottom: 10px;
+      z-index: 999;
+    }
+
     .top-section {
       display: flex;
       align-items: center;
@@ -81,7 +90,7 @@
     .section h2 {
       font-size: 20px;
       color: #235784;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     ul {
@@ -90,7 +99,16 @@
 
     ul li {
       margin-bottom: 10px;
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    .edu-card {
+      background: #f9fbfd;
+      border-left: 4px solid #235784;
+      padding: 14px 20px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
 
     .publication-wrapper {
@@ -156,43 +174,40 @@
 
 <div class="container">
 
-  <!-- Top -->
-  <div class="top-section">
-    <div class="profile-text">
-      <h1>Zahra Sobhaninia</h1>
-      <p>
-        I’m a PhD Fellow in Artificial Intelligence at the University of Copenhagen, working at the Pioneer Centre for AI under the supervision of Prof. Mads Nielsen. My research focuses on learning from large-scale Electronic Health Record (EHR) data and medical imaging to build clinically meaningful AI systems.
-      </p>
-      <div class="links">
-        <a href="mailto:zahra.s@di.ku.dk">Email</a>
-        <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <a href="https://github.com/ZahraSobhaninia" target="_blank">GitHub</a>
+  <!-- Top Header (Sticky) -->
+  <div class="sticky-header">
+    <div class="top-section">
+      <div class="profile-text">
+        <h1>Zahra Sobhaninia</h1>
+        <p>
+          I’m a PhD Fellow in Artificial Intelligence at the University of Copenhagen, working at the Pioneer Centre for AI under the supervision of Prof. Mads Nielsen. My research focuses on learning from large-scale Electronic Health Record (EHR) data and medical imaging to build clinically meaningful AI systems.
+        </p>
+        <div class="links">
+          <a href="mailto:zahra.s@di.ku.dk">Email</a>
+          <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+          <a href="https://github.com/ZahraSobhaninia" target="_blank">GitHub</a>
+        </div>
       </div>
-    </div>
-    <div class="profile-image">
-      <img src="zahra.jpg" alt="Zahra Sobhaninia">
+      <div class="profile-image">
+        <img src="zahra.jpg" alt="Zahra Sobhaninia">
+      </div>
     </div>
   </div>
 
   <!-- Education -->
   <div class="section">
     <h2>🎓 Education</h2>
-    <ul>
-      <li>
-        <strong>PhD in AI</strong><br>
-        University of Copenhagen, Denmark<br>
-        Supervisor: <a href="https://di.ku.dk/english/staff/vip/researchers_p1ai/?pure=en/persons/137906" target="_blank">Prof. Mads Nielsen</a>
-      </li>
-      <li>
-        <strong>M.Sc. in Software Engineering (AI)</strong><br>
-        Isfahan University of Technology (IUT), Iran<br>
-        Thesis: <em>Medical Image Analysis via Multi-Task Learning</em><br>
-        Supervisor:
-        <a href="https://www.seattleu.edu/directory/profiles/shadrokh-samavi-phd.php" target="_blank">Prof. Shadrokh Samavi</a>
-        and
-        <a href="https://people.iut.ac.ir/en/nader_karimi/professional-profile" target="_blank">Dr. Nader Karimi</a>
-      </li>
-    </ul>
+    <div class="edu-card">
+      <strong>PhD in AI</strong><br>
+      University of Copenhagen, Denmark<br>
+      Supervisor: <a href="https://di.ku.dk/english/staff/vip/researchers_p1ai/?pure=en/persons/137906" target="_blank">Prof. Mads Nielsen</a>
+    </div>
+    <div class="edu-card">
+      <strong>M.Sc. in Software Engineering (AI)</strong><br>
+      Isfahan University of Technology (IUT), Iran<br>
+      Thesis: <em>Medical Image Analysis via Multi-Task Learning</em><br>
+      Supervisor: <a href="https://www.seattleu.edu/directory/profiles/shadrokh-samavi-phd.php" target="_blank">Prof. Shadrokh Samavi</a> and <a href="https://people.iut.ac.ir/en/nader_karimi/professional-profile" target="_blank">Dr. Nader Karimi</a>
+    </div>
   </div>
 
   <!-- News -->
@@ -214,6 +229,15 @@
       <li>Computer Vision</li>
       <li>Deep Learning and LLMs</li>
       <li>Machine Learning</li>
+    </ul>
+  </div>
+
+  <!-- Teaching & Supervision -->
+  <div class="section">
+    <h2>👩‍🏫 Teaching & Supervision</h2>
+    <ul>
+      <li><strong>TA</strong> – Deep Learning, University of Copenhagen (Fall 2025)</li>
+      <li><strong>Supervisor</strong> – 2 MSc thesis projects on medical imaging, IUT (2022–2023)</li>
     </ul>
   </div>
 
