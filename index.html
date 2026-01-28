@@ -225,6 +225,31 @@
   </ul>
 </div>
 
+  <!-- Publications -->
+<div class="section">
+  <h2>📄 Selected Publications</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+
+    <!-- Left Column: Paper List -->
+    <div style="flex: 1 1 55%;">
+      <ul style="columns: 2; column-gap: 20px; font-size: 15px; line-height: 1.6;">
+        <li>2023 - Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification</li>
+        <li>2024 - Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning</li>
+        <li>2023 - Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation</li>
+        <li>2021 - Determination of Foveal Avascular Zone Parameters Using A New Location-Aware Deep-Learning Method</li>
+        <li>2020 - Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales</li>
+        <li>2019 - Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning</li>
+      </ul>
+    </div>
+
+    <!-- Right Column: Author Order Chart -->
+    <div style="flex: 1 1 40%;">
+      <canvas id="authorOrderChart" style="height: 220px;"></canvas>
+    </div>
+
+  </div>
+</div>
+
 
   <!-- STATS -->
   <div class="section">
@@ -271,7 +296,7 @@
     data: {
       labels,
       datasets: [{
-        data: [7,42,69,98,101,137,131,9],
+        data: [7,42,69,98,101,137,139,9],
         backgroundColor: "#76b5c5cc"
       }]
     },
