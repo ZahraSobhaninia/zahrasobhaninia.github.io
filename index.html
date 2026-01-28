@@ -251,20 +251,36 @@
 </div>
 
 
-  <!-- STATS -->
-  <div class="section">
-    <h2>📈 Research Stats</h2>
-    <div class="charts-wrapper">
-      <div class="chart-box">
+<!-- 📄 Publications & Charts (Two-column layout) -->
+<div class="section">
+  <h2>📄 Selected Publications & Stats</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start;">
+    
+    <!-- LEFT: Publications -->
+    <div style="flex: 1 1 52%;">
+      <ul style="font-size: 15px; line-height: 1.6;">
+        <li>2023 - Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification</li>
+        <li>2024 - Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning</li>
+        <li>2023 - Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation</li>
+        <li>2021 - Determination of Foveal Avascular Zone Parameters Using a New Location-Aware Deep-Learning Method</li>
+        <li>2020 - Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales</li>
+        <li>2019 - Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: Two stacked charts -->
+    <div style="flex: 1 1 40%;">
+      <div style="margin-bottom: 30px; background: #f3f9ff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1); height: 220px;">
         <canvas id="papersChart"></canvas>
       </div>
-      <div class="chart-box">
+      <div style="background: #f3f9ff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1); height: 220px;">
         <canvas id="citationsChart"></canvas>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
+
 
 <script>
   const labels = ["2019","2020","2021","2022","2023","2024","2025","2026"];
