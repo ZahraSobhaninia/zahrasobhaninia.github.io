@@ -1,81 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zahra Sobhaninia</title>
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(180deg, #d6e9fb 0%, #eef5fc 100%);
-      font-family: 'Inter', sans-serif;
-      color: #333;
+    :root{
+      --primary: #235784;
+      --primary-2:#1d5a8a;
+      --text:#3b3f45;            /* خاکستریِ متن */
+      --muted:#6b7280;
+      --bg1:#d6e9fb;
+      --bg2:#eef5fc;
+
+      --card:#f9fbfd;
+      --card2:#f3f9ff;
+
+      --shadow: 0 10px 30px rgba(35, 87, 132, 0.15);
+      --shadow-soft: 0 4px 12px rgba(35, 87, 132, 0.10);
+
+      --radius: 14px;
+
+      /* تایم‌لاین: بازه سال‌ها (اگر خواستی آپدیت کنی همین‌جا) */
+      --timeline-start: 2018;
+      --timeline-end: 2026; /* مثلا اگر خواستی 2025 یا 2027 بشه، این عدد رو عوض کن */
     }
 
-    .container {
+    body{
+      margin:0;
+      padding:0;
+      background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+      font-family:'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    .container{
       max-width: 980px;
       margin: 60px auto;
-      background-color: #ffffff;
+      background: #fff;
       padding: 45px 50px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(35, 87, 132, 0.15);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     /* Sticky header */
-    .sticky-header {
+    .sticky-header{
       position: sticky;
       top: 0;
-      background: #fff;
-      padding-bottom: 10px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       z-index: 999;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(35,87,132,0.08);
     }
 
-    .top-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    .top-section{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 18px;
+      flex-wrap:wrap;
+      padding-top: 6px;
     }
 
-    .profile-text {
-      flex: 1 1 62%;
+    .profile-text{
+      flex:1 1 62%;
       text-align: justify;
     }
 
-    .profile-text h1 {
+    .profile-text h1{
       font-size: 30px;
-      color: #235784;
-      margin-bottom: 14px;
+      color: var(--primary);
+      margin: 0 0 12px 0;
+      letter-spacing: -0.2px;
     }
 
-    .profile-text p {
+    .profile-text p{
       font-size: 15px;
-      line-height: 1.8;
+      line-height: 1.85;
+      margin: 0 0 12px 0;
+      color: var(--text);
     }
 
-    .links a {
+    .links a{
       margin-right: 18px;
       font-size: 14.5px;
       text-decoration: none;
-      color: #235784;
-      font-weight: 500;
-      transition: color 0.3s ease;
+      color: var(--primary);
+      font-weight: 600;
+      transition: color .25s ease, transform .25s ease;
+      display: inline-block;
     }
-
-    .links a:hover {
-      color: #1d5a8a;
+    .links a:hover{
+      color: var(--primary-2);
+      transform: translateY(-1px);
       text-decoration: underline;
     }
 
-    .profile-image {
-      flex: 1 1 32%;
-      text-align: center;
+    .profile-image{
+      flex:1 1 32%;
+      text-align:center;
     }
-
-    .profile-image img {
+    .profile-image img{
       width: 220px;
       border-radius: 50%;
       background: #f0f6fc;
@@ -83,243 +117,453 @@
       box-shadow: 0 8px 20px rgba(35, 87, 132, 0.18);
     }
 
-    .section {
-      margin-top: 42px;
+    .section{
+      margin-top: 38px;
     }
 
-    .section h2 {
+    .section h2{
       font-size: 20px;
-      color: #235784;
-      margin-bottom: 16px;
+      color: rgba(35,87,132,0.92); /* ملایم‌تر */
+      margin: 0 0 16px 0;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      letter-spacing: -0.1px;
     }
 
-    ul {
+    ul{
       padding-left: 20px;
+      margin: 0;
     }
-
-    ul li {
+    ul li{
       margin-bottom: 10px;
       line-height: 1.7;
+      color: var(--text);
     }
 
-    .edu-card {
-      background: #f9fbfd;
-      border-left: 4px solid #235784;
+    a{ color: var(--primary); }
+
+    /* Education cards */
+    .edu-card{
+      background: var(--card);
+      border-left: 4px solid var(--primary);
       padding: 14px 20px;
-      margin-bottom: 18px;
-      border-radius: 8px;
+      margin-bottom: 14px;
+      border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
+    .edu-card strong{ font-weight: 600; }
+    .edu-card em{ color: #2b2f36; }
+    .edu-card a{ font-weight: 600; }
 
-    .publication-wrapper {
-      display: flex;
+    /* === Education + Research Focus (two columns) === */
+    .edu-focus-grid{
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .focus-card{
+      background: var(--card2);
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* یک هاله‌ی خیلی ملایم (قابل پیاده‌سازی با CSS) */
+    .focus-card::before{
+      content:"";
+      position:absolute;
+      inset:-80px -60px auto auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 30% 30%, rgba(244,140,6,0.22), rgba(244,140,6,0) 62%);
+      pointer-events:none;
+      filter: blur(0px);
+    }
+    .focus-title{
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(35,87,132,0.85);
+      display:flex;
+      align-items:center;
+      gap: 8px;
+    }
+    .focus-sub{
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 12px 0;
+      line-height: 1.55;
+    }
+
+    /* Timeline */
+    .timeline{
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(35,87,132,0.10);
+      border-radius: 12px;
+      padding: 14px 14px 12px;
+    }
+    .tl-scale{
+      display:flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+      padding: 0 2px;
+    }
+    .tl-rows{
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .tl-row{
+      display:grid;
+      grid-template-columns: 120px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+    .tl-label{
+      font-size: 12.5px;
+      color: #39414a;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+    .tl-track{
+      position: relative;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(35,87,132,0.08);
+      overflow: hidden;
+    }
+    .tl-bar{
+      position:absolute;
+      top:0; bottom:0;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      opacity: 0.95;
+    }
+
+    /* درصدها براساس 2018-2026 (8 سال فاصله): 
+       2022 شروع = 50% ، 2024 شروع = 75%
+       اگر --timeline-end را عوض کنی، بهتره این درصدها رو هم دستی عوض کنیم. */
+    .bar-medimg{ left: 0%;   width: 100%; background: linear-gradient(90deg, rgba(245,158,11,0.95), rgba(245,158,11,0.65)); }
+    .bar-transformers{ left: 50%; width: 50%;  background: linear-gradient(90deg, rgba(59,130,246,0.95), rgba(59,130,246,0.60)); }
+    .bar-ehr{ left: 75%; width: 25%; background: linear-gradient(90deg, rgba(16,185,129,0.95), rgba(16,185,129,0.58)); }
+
+    .tl-legend{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .dot{
+      width:10px; height:10px; border-radius: 50%;
+      display:inline-block;
+      margin-right: 6px;
+      vertical-align: -1px;
+    }
+
+    /* News link chip */
+    .news-chip{
+      display:inline-flex;
+      align-items:center;
+      gap: 6px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(35,87,132,0.08);
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-left: 6px;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .news-chip:hover{
+      transform: translateY(-1px);
+      background: rgba(35,87,132,0.12);
+      text-decoration: none;
+    }
+
+    /* Publications + charts (two columns) */
+    .publication-wrapper{
+      display:flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 30px;
     }
-
-    .publication-list {
+    .publication-list{
       flex: 1 1 50%;
       font-size: 15px;
       padding-right: 10px;
       text-align: justify;
+      margin-top: 0;
     }
-
-    .publication-list li {
-      margin-bottom: 14px;
-    }
-
-    .pub-link-icon {
+    .publication-list li{ margin-bottom: 14px; }
+    .pub-link-icon{
       margin-left: 8px;
-      text-decoration: none;
-      color: #235784;
+      text-decoration:none;
+      color: var(--primary);
       font-size: 14px;
+      transition: transform .2s ease, color .2s ease;
+      display:inline-block;
+    }
+    .pub-link-icon:hover{
+      color: var(--primary-2);
+      transform: translateY(-1px);
     }
 
-    .pub-link-icon:hover {
-      color: #1d5a8a;
-    }
-
-    .charts {
-      flex: 1 1 40%;
-    }
-
-    .chart-box {
+    .charts{ flex: 1 1 40%; }
+    .chart-box{
       height: 220px;
-      background: #f3f9ff;
+      background: var(--card2);
       padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(35, 87, 132, 0.1);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(35,87,132,0.08);
     }
-
-    .chart-box canvas {
+    .chart-box canvas{
       width: 100% !important;
       height: 100% !important;
     }
 
-    @media (max-width: 768px) {
-      .top-section {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-      .publication-wrapper {
-        flex-direction: column;
-      }
+    /* Responsive */
+    @media (max-width: 900px){
+      .edu-focus-grid{ grid-template-columns: 1fr; }
+      .tl-row{ grid-template-columns: 1fr; }
+      .tl-label{ margin-bottom: -4px; }
+    }
+    @media (max-width: 768px){
+      .top-section{ flex-direction: column-reverse; text-align:center; }
+      .profile-text{ text-align: justify; }
+      .publication-wrapper{ flex-direction: column; }
+      .publication-list{ padding-right: 0; }
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
 
-<div class="container">
+    <!-- Top Header (Sticky) -->
+    <div class="sticky-header">
+      <div class="top-section">
+        <div class="profile-text">
+          <h1>Zahra Sobhaninia</h1>
+          <p>
+            I’m a PhD Fellow in Artificial Intelligence at the University of Copenhagen, working at the Pioneer Centre for AI under the supervision of Prof. Mads Nielsen. My research focuses on learning from large-scale Electronic Health Record (EHR) data and medical imaging to build clinically meaningful AI systems.
+          </p>
+          <div class="links">
+            <a href="mailto:zahra.s@di.ku.dk">Email</a>
+            <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+            <a href="https://github.com/ZahraSobhaninia" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
 
-  <!-- Top Header (Sticky) -->
-  <div class="sticky-header">
-    <div class="top-section">
-      <div class="profile-text">
-        <h1>Zahra Sobhaninia</h1>
-        <p>
-          I’m a PhD Fellow in Artificial Intelligence at the University of Copenhagen, working at the Pioneer Centre for AI under the supervision of Prof. Mads Nielsen. My research focuses on learning from large-scale Electronic Health Record (EHR) data and medical imaging to build clinically meaningful AI systems.
-        </p>
-        <div class="links">
-          <a href="mailto:zahra.s@di.ku.dk">Email</a>
-          <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-          <a href="https://github.com/ZahraSobhaninia" target="_blank">GitHub</a>
+        <div class="profile-image">
+          <img src="zahra.jpg" alt="Zahra Sobhaninia">
         </div>
       </div>
-      <div class="profile-image">
-        <img src="zahra.jpg" alt="Zahra Sobhaninia">
+    </div>
+
+    <!-- Education + Research Focus (two columns) -->
+    <div class="section">
+      <h2>🎓 Education & Research Focus</h2>
+
+      <div class="edu-focus-grid">
+        <!-- LEFT: Education -->
+        <div>
+          <div class="edu-card">
+            <strong>PhD in AI</strong><br>
+            University of Copenhagen, Denmark<br>
+            Supervisor:
+            <a href="https://di.ku.dk/english/staff/vip/researchers_p1ai/?pure=en/persons/137906" target="_blank" rel="noopener">Prof. Mads Nielsen</a>
+          </div>
+
+          <div class="edu-card">
+            <strong>M.Sc. in Software Engineering (AI)</strong><br>
+            Isfahan University of Technology (IUT), Iran<br>
+            Thesis: <em>Medical Image Analysis via Multi-Task Learning</em><br>
+            Supervisor:
+            <a href="https://www.seattleu.edu/directory/profiles/shadrokh-samavi-phd.php" target="_blank" rel="noopener">Prof. Shadrokh Samavi</a>
+            and
+            <a href="https://people.iut.ac.ir/en/nader_karimi/professional-profile" target="_blank" rel="noopener">Dr. Nader Karimi</a>
+          </div>
+
+          <div class="edu-card">
+            <strong>B.Sc. in Computer Engineering (Hardware)</strong><br>
+            Isfahan University of Technology (IUT), Iran
+          </div>
+        </div>
+
+        <!-- RIGHT: Research Focus timeline -->
+        <div class="focus-card">
+          <div class="focus-title">🧪 Research Focus (Timeline)</div>
+          <p class="focus-sub">
+            A quick view of how my research focus has evolved over time.
+          </p>
+
+          <div class="timeline">
+            <div class="tl-scale">
+              <span>2018</span><span>2022</span><span>2024</span><span>Now</span>
+            </div>
+
+            <div class="tl-rows">
+              <div class="tl-row">
+                <div class="tl-label">Medical Imaging<br><span style="font-weight:400;color:var(--muted);">DL • CV</span></div>
+                <div class="tl-track">
+                  <div class="tl-bar bar-medimg" title="2018 → Now"></div>
+                </div>
+              </div>
+
+              <div class="tl-row">
+                <div class="tl-label">Transformers</div>
+                <div class="tl-track">
+                  <div class="tl-bar bar-transformers" title="2022 → Now"></div>
+                </div>
+              </div>
+
+              <div class="tl-row">
+                <div class="tl-label">EHR (PhD)</div>
+                <div class="tl-track">
+                  <div class="tl-bar bar-ehr" title="2024 → Now"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tl-legend">
+              <span><i class="dot" style="background: rgba(245,158,11,0.9)"></i>Medical Image Analysis</span>
+              <span><i class="dot" style="background: rgba(59,130,246,0.9)"></i>Transformers</span>
+              <span><i class="dot" style="background: rgba(16,185,129,0.9)"></i>EHR</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Education -->
-  <div class="section">
-    <h2>🎓 Education</h2>
-    <div class="edu-card">
-      <strong>PhD in AI</strong><br>
-      University of Copenhagen, Denmark<br>
-      Supervisor: <a href="https://di.ku.dk/english/staff/vip/researchers_p1ai/?pure=en/persons/137906" target="_blank">Prof. Mads Nielsen</a>
-    </div>
-    <div class="edu-card">
-      <strong>M.Sc. in Software Engineering (AI)</strong><br>
-      Isfahan University of Technology (IUT), Iran<br>
-      Thesis: <em>Medical Image Analysis via Multi-Task Learning</em><br>
-      Supervisor:
-        <a href="https://www.seattleu.edu/directory/profiles/shadrokh-samavi-phd.php" target="_blank">Prof. Shadrokh Samavi</a> and <a href="https://people.iut.ac.ir/en/nader_karimi/professional-profile" target="_blank">Dr. Nader Karimi</a>
-    </div>
-          <div style="background: #f9fafc; padding: 16px 20px; margin-bottom: 18px; border-left: 5px solid #2c6991; border-radius: 10px;">
-  <strong>B.Sc. in Computer Engineering (Hardware)</strong><br>
-  Isfahan University of Technology (IUT), Iran
-</div>
-  </div>
-  
-
-<div class="section">
-  <h2>📰 News</h2>
-  <ul>
-    <li><strong>[Conference]</strong> Participated in the 2026 NLDL Conference and Winter School (Tromsø, Norway).</li>
-    <li><strong>[Teaching]</strong> Teaching Assistant for Deep Learning, University of Copenhagen (Fall 2025).</li>
-    <li><strong>[Paper]</strong> Four papers accepted at IEEE EMBC 2025 <a href="https://www.linkedin.com/posts/zahra-sobhaninia-48a146b9_embc2025-healthcare-biomedicalai-activity-7354913354244616192-7lzN?utm_source=share&utm_medium=member_desktop&rcm=ACoAABkdiyoBINM5aolPa-6YB6vndf3nRvBqzcY" target="_blank" style="color:#235784;text-decoration:none;font-size: 14px;">(Jun 2025 🔗)</a>.</li>
-  </ul>
-</div>
-
-  <!-- Research Interests -->
-  <div class="section">
-    <h2>🧪 Research Interests</h2>
-    <ul>
-      <li>AI in Healthcare</li>
-      <li>Medical Image Analysis</li>
-      <li>Computer Vision</li>
-      <li>Deep Learning and LLMs</li>
-      <li>Machine Learning</li>
-    </ul>
-  </div>
-
-  <!-- Teaching & Supervision -->
-  <div class="section">
-    <h2>👩‍🏫 Teaching & Supervision</h2>
-    <ul>
-      <li><strong>TA</strong> – Deep Learning, University of Copenhagen (Fall 2025)</li>
-      <li><strong>Supervisor</strong> – 2 MSc thesis projects on medical imaging, IUT (2022–2023)</li>
-    </ul>
-  </div>
-
-  <!-- Publications & Charts -->
-  <div class="section">
-    <h2>📘 Publications</h2>
-    <div class="publication-wrapper">
-
-      <!-- Publications -->
-      <ul class="publication-list">
-        <li><strong>2025 –</strong> Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification <a href="https://ieeexplore.ieee.org/abstract/document/11252632" class="pub-link-icon" target="_blank">🔗</a></li>
-        <li><strong>2024 –</strong> Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning <a href="https://ieeexplore.ieee.org/abstract/document/10578993" class="pub-link-icon" target="_blank">🔗</a></li>
-        <li><strong>2023 –</strong> Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation <a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809423002677" class="pub-link-icon" target="_blank">🔗</a></li>
-        <li><strong>2021 –</strong> Determination of Foveal Avascular Zone Parameters Using a New Location-Aware Deep-Learning Method <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11843/1184311/Determination-of-foveal-avascular-zone-parameters-using-a-new-location/10.1117/12.2594152.short" class="pub-link-icon" target="_blank">🔗</a></li>
-        <li><strong>2020 –</strong> Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales <a href="https://ieeexplore.ieee.org/abstract/document/9260876" class="pub-link-icon" target="_blank">🔗</a></li>
-        <li><strong>2019 –</strong> Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning <a href="https://ieeexplore.ieee.org/abstract/document/8856981" class="pub-link-icon" target="_blank">🔗</a></li>
+    <!-- News -->
+    <div class="section">
+      <h2>📰 News</h2>
+      <ul>
+        <li><strong>[Conference]</strong> Participated in the 2026 NLDL Conference and Winter School (Tromsø, Norway).</li>
+        <li><strong>[Teaching]</strong> Teaching Assistant for Deep Learning, University of Copenhagen (Fall 2025).</li>
+        <li>
+          <strong>[Paper]</strong> Four papers accepted at IEEE EMBC 2025
+          <a class="news-chip"
+             href="https://www.linkedin.com/posts/zahra-sobhaninia-48a146b9_embc2025-healthcare-biomedicalai-activity-7354913354244616192-7lzN?utm_source=share&utm_medium=member_desktop&rcm=ACoAABkdiyoBINM5aolPa-6YB6vndf3nRvBqzcY"
+             target="_blank" rel="noopener">
+            Jun 2025 🔗
+          </a>.
+        </li>
       </ul>
+    </div>
 
-      <!-- Charts -->
-      <div class="charts">
-        <div class="chart-box">
-          <canvas id="papersChart"></canvas>
-        </div>
-        <div class="chart-box">
-          <canvas id="citationsChart"></canvas>
+    <!-- Teaching & Supervision -->
+    <div class="section">
+      <h2>👩‍🏫 Teaching & Supervision</h2>
+      <ul>
+        <li><strong>TA</strong> – Deep Learning, University of Copenhagen (Fall 2025)</li>
+        <li><strong>Supervisor</strong> – 2 MSc thesis projects on medical imaging, IUT (2022–2023)</li>
+      </ul>
+    </div>
+
+    <!-- Publications & Charts -->
+    <div class="section">
+      <h2>📘 Publications</h2>
+
+      <div class="publication-wrapper">
+        <!-- Publications -->
+        <ul class="publication-list">
+          <li><strong>2025 –</strong> Dual-Branch Multi-Task Regressor and Transformer Model for Endoscopic Image Classification
+            <a href="https://ieeexplore.ieee.org/abstract/document/11252632" class="pub-link-icon" target="_blank" rel="noopener">🔗</a>
+          </li>
+          <li><strong>2024 –</strong> Enhanced Nuclei Segmentation in Histopathological Images Using a Novel Preprocessing Pipeline and Deep Learning
+            <a href="https://ieeexplore.ieee.org/abstract/document/10578993" class="pub-link-icon" target="_blank" rel="noopener">🔗</a>
+          </li>
+          <li><strong>2023 –</strong> Brain Tumor Segmentation by Cascaded Multiscale Multi-Task Learning Framework Based on Feature Aggregation
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809423002677" class="pub-link-icon" target="_blank" rel="noopener">🔗</a>
+          </li>
+          <li><strong>2021 –</strong> Determination of Foveal Avascular Zone Parameters Using a New Location-Aware Deep-Learning Method
+            <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11843/1184311/Determination-of-foveal-avascular-zone-parameters-using-a-new-location/10.1117/12.2594152.short" class="pub-link-icon" target="_blank" rel="noopener">🔗</a>
+          </li>
+          <li><strong>2020 –</strong> Brain Tumor Segmentation by Cascaded Deep Neural Networks Using Multiple Image Scales
+            <a href="https://ieeexplore.ieee.org/abstract/document/9260876" class="pub-link-icon" target="_blank" rel="noopener">🔗</a>
+          </li>
+          <li><strong>2019 –</strong> Fetal Ultrasound Image Segmentation for Measuring Biometric Parameters Using Multi-Task Deep Learning
+            <a href="https://ieeexplore.ieee.org/abstract/document/8856981" class="pub-link-icon" target="_blank" rel="noopener">🔗</a>
+          </li>
+        </ul>
+
+        <!-- Charts (vertical) -->
+        <div class="charts">
+          <div class="chart-box">
+            <canvas id="papersChart"></canvas>
+          </div>
+          <div class="chart-box">
+            <canvas id="citationsChart"></canvas>
+          </div>
         </div>
       </div>
-
     </div>
+
   </div>
 
-</div>
+  <!-- Charts -->
+  <script>
+    const labels = ["2019","2020","2021","2022","2023","2024","2025"];
 
-<!-- CHART JS -->
-<script>
-  const labels = ["2019","2020","2021","2022","2023","2024","2025"];
-
-  new Chart(document.getElementById("papersChart"), {
-    type: "bar",
-    data: {
-      labels,
-      datasets: [{
-        data: [3,4,2,3,2,1,6],
-        backgroundColor: "#f48c06cc"
-      }]
-    },
-    options: {
-      plugins: {
-        legend: { display: false },
-        title: { display: true, text: "Number of Papers", font: { size: 14 } }
+    new Chart(document.getElementById("papersChart"), {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [{
+          data: [3,4,2,3,2,1,6],
+          backgroundColor: "rgba(244, 140, 6, 0.78)",
+          borderRadius: 6
+        }]
       },
-      scales: {
-        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: "Number of Papers", font: { size: 14, weight: '600' }, color: "#445" }
+        },
+        scales: {
+          x: { ticks: { color: "#667085" }, grid: { color: "rgba(0,0,0,0.06)" } },
+          y: { beginAtZero: true, ticks: { stepSize: 1, color: "#667085" }, grid: { color: "rgba(0,0,0,0.06)" } }
+        }
       }
-    }
-  });
+    });
 
-  new Chart(document.getElementById("citationsChart"), {
-    type: "bar",
-    data: {
-      labels,
-      datasets: [{
-        data: [10,45,60,95,105,135,139],
-        backgroundColor: "#76b5c5cc"
-      }]
-    },
-    options: {
-      plugins: {
-        legend: { display: false },
-        title: { display: true, text: "Number of Citations", font: { size: 14 } }
+    new Chart(document.getElementById("citationsChart"), {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [{
+          data: [10,45,60,95,105,135,139],
+          backgroundColor: "rgba(118, 181, 197, 0.78)",
+          borderRadius: 6
+        }]
       },
-      scales: {
-        y: { beginAtZero: true, ticks: { stepSize: 25 } }
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: "Number of Citations", font: { size: 14, weight: '600' }, color: "#445" }
+        },
+        scales: {
+          x: { ticks: { color: "#667085" }, grid: { color: "rgba(0,0,0,0.06)" } },
+          y: { beginAtZero: true, ticks: { stepSize: 25, color: "#667085" }, grid: { color: "rgba(0,0,0,0.06)" } }
+        }
       }
-    }
-  });
-</script>
-
+    });
+  </script>
 </body>
 </html>
