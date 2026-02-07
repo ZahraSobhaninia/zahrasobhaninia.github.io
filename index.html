@@ -345,53 +345,59 @@
       .publication-wrapper{ flex-direction: column; }
       .publication-list{ padding-right: 0; }
     }
-
-/* ===== EDUCATION – Experience-style timeline (Blue & Orange theme) ===== */
+  /* ===== EDUCATION – CLEAN CV TIMELINE ===== */
 
 .education{
-  position: relative;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .edu-item{
   display: grid;
-  grid-template-columns: 140px 24px 1fr;
-  column-gap: 12px;
+  grid-template-columns: 150px 20px 1fr;
+  column-gap: 16px;
+  align-items: flex-start;
   position: relative;
-  padding-bottom: 28px;
 }
 
-.edu-item:last-child{
-  padding-bottom: 0;
-}
-
-/* Year (left) */
 .edu-year{
   text-align: right;
   font-size: 15px;
   font-weight: 600;
-  color: var(--primary); /* آبی سایت */
+  color: var(--primary);
   white-space: nowrap;
 }
 
-/* Dot (orange) */
-.edu-dot{
+.edu-line{
   position: relative;
-  top: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.edu-dot{
   width: 10px;
   height: 10px;
-  background: rgba(244,140,6,0.95); /* نارنجی سایت */
+  background: rgba(244,140,6,0.95); /* نارنجی */
   border-radius: 50%;
+  margin-top: 6px;
   z-index: 2;
 }
 
-.edu-item:last-child::after{
-  display:none;
+.edu-line::after{
+  content:"";
+  position: absolute;
+  top: 20px;
+  bottom: -30px;
+  width: 2px;
+  background: rgba(35,87,132,0.25); /* آبی کمرنگ */
 }
 
-/* Content (right) */
+.edu-item:last-child .edu-line::after{
+  display: none;
+}
+
 .edu-content{
   line-height: 1.65;
+  padding-bottom: 28px;
 }
 
 .edu-degree{
@@ -410,7 +416,6 @@
   font-size: 14.5px;
   color: var(--text);
 }
-
 
     
   </style>
