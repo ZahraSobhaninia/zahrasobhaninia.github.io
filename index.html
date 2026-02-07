@@ -345,6 +345,85 @@
       .publication-wrapper{ flex-direction: column; }
       .publication-list{ padding-right: 0; }
     }
+
+/* ===== EDUCATION – Experience-style timeline (Blue & Orange theme) ===== */
+
+.education{
+  position: relative;
+  margin-top: 10px;
+}
+
+.edu-item{
+  display: grid;
+  grid-template-columns: 140px 24px 1fr;
+  column-gap: 12px;
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.edu-item:last-child{
+  padding-bottom: 0;
+}
+
+/* Year (left) */
+.edu-year{
+  text-align: right;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary); /* آبی سایت */
+  white-space: nowrap;
+}
+
+/* Dot (orange) */
+.edu-dot{
+  position: relative;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: rgba(244,140,6,0.95); /* نارنجی سایت */
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Vertical line */
+.edu-item::after{
+  content:"";
+  position:absolute;
+  left: 152px;  /* تنظیم دقیق خط */
+  top: 22px;
+  bottom: -22px;
+  width: 2px;
+  background: rgba(35,87,132,0.25); /* آبی کمرنگ */
+}
+
+.edu-item:last-child::after{
+  display:none;
+}
+
+/* Content (right) */
+.edu-content{
+  line-height: 1.65;
+}
+
+.edu-degree{
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.edu-university{
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.edu-meta{
+  font-size: 14.5px;
+  color: var(--text);
+}
+
+
+    
   </style>
 </head>
 
