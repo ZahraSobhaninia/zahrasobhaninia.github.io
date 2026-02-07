@@ -21,6 +21,8 @@
   --shadow:0 10px 30px rgba(35,87,132,.15);
 }
 
+*{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:Inter,sans-serif;
@@ -40,11 +42,10 @@ body{
 /* ===== HEADER ===== */
 .header{
   display:flex;
-  gap:24px;
-  flex-wrap:wrap;
+  gap:28px;
   align-items:center;
+  flex-wrap:wrap;
 }
-
 .header-text{flex:1}
 .header-text h1{
   margin:0 0 12px;
@@ -71,21 +72,18 @@ body{
 }
 
 /* ===== SECTION ===== */
-.section{margin-top:42px}
+.section{margin-top:44px}
 .section h2{
   font-size:20px;
   color:var(--primary);
-  margin-bottom:20px;
+  margin-bottom:22px;
 }
 
 /* ===== EDUCATION TIMELINE ===== */
-.education{
-  margin-top:10px;
-}
-.edu-item{
+.education .edu-item{
   display:grid;
   grid-template-columns:140px 24px 1fr;
-  column-gap:16px;
+  gap:16px;
   margin-bottom:28px;
 }
 .edu-year{
@@ -118,8 +116,8 @@ body{
 
 .edu-degree{font-weight:600}
 .edu-university{
-  color:var(--primary);
   font-weight:600;
+  color:var(--primary);
 }
 .edu-meta{font-size:14.5px}
 
@@ -130,9 +128,6 @@ body{
   padding:20px;
   box-shadow:var(--shadow);
 }
-.timeline{
-  margin-top:16px;
-}
 .tl-row{
   display:grid;
   grid-template-columns:140px 1fr;
@@ -141,22 +136,47 @@ body{
 }
 .tl-track{
   height:12px;
-  border-radius:999px;
   background:rgba(35,87,132,.1);
+  border-radius:999px;
   position:relative;
 }
 .tl-bar{
   position:absolute;
-  top:0;bottom:0;
+  inset:0;
   border-radius:999px;
 }
-.bar-img{left:0;width:100%;background:linear-gradient(90deg,var(--accent),#f7b25a)}
+.bar-img{background:linear-gradient(90deg,var(--accent),#f7b25a)}
 .bar-tr{left:50%;width:50%;background:linear-gradient(90deg,#3b82f6,#7aa8ff)}
 .bar-ehr{left:75%;width:25%;background:linear-gradient(90deg,#10b981,#6ee7b7)}
 
-@media(max-width:768px){
-  .edu-item{grid-template-columns:1fr 24px 1fr}
-  .edu-year{text-align:left}
+/* ===== BOTTOM TWO COLUMN ===== */
+.two-col{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:32px;
+}
+
+.card{
+  background:var(--card);
+  padding:22px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  margin-bottom:26px;
+}
+
+ul{padding-left:18px;margin:0}
+li{margin-bottom:10px;line-height:1.7}
+
+.chart-box{
+  background:var(--card);
+  padding:16px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  margin-bottom:22px;
+}
+
+@media(max-width:900px){
+  .two-col{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -174,8 +194,8 @@ body{
     </p>
     <div class="links">
       <a href="mailto:zahra.s@di.ku.dk">Email</a>
-      <a href="https://scholar.google.com">Google Scholar</a>
-      <a href="https://github.com/ZahraSobhaninia">GitHub</a>
+      <a href="#">Google Scholar</a>
+      <a href="#">GitHub</a>
     </div>
   </div>
   <div class="profile-img">
@@ -186,7 +206,6 @@ body{
 <!-- EDUCATION -->
 <div class="section">
 <h2>🎓 Education</h2>
-
 <div class="education">
 
   <div class="edu-item">
@@ -195,9 +214,7 @@ body{
     <div>
       <div class="edu-degree">PhD in Artificial Intelligence</div>
       <div class="edu-university">University of Copenhagen</div>
-      <div class="edu-meta">
-        Supervisor: <a href="#">Prof. Mads Nielsen</a>
-      </div>
+      <div class="edu-meta">Supervisor: Prof. Mads Nielsen</div>
     </div>
   </div>
 
@@ -207,9 +224,7 @@ body{
     <div>
       <div class="edu-degree">M.Sc. in Software Engineering (AI)</div>
       <div class="edu-university">Isfahan University of Technology</div>
-      <div class="edu-meta">
-        Thesis: <em>Medical Image Analysis via Multi-Task Learning</em>
-      </div>
+      <div class="edu-meta"><em>Medical Image Analysis via Multi-Task Learning</em></div>
     </div>
   </div>
 
@@ -228,29 +243,94 @@ body{
 <!-- RESEARCH FOCUS -->
 <div class="section">
 <h2>🧪 Research Focus</h2>
-
 <div class="focus-card">
-  <div class="timeline">
-
-    <div class="tl-row">
-      <div><strong>Medical Imaging</strong><br><span class="muted">DL • CV</span></div>
-      <div class="tl-track"><div class="tl-bar bar-img"></div></div>
-    </div>
-
-    <div class="tl-row">
-      <div><strong>Transformers</strong></div>
-      <div class="tl-track"><div class="tl-bar bar-tr"></div></div>
-    </div>
-
-    <div class="tl-row">
-      <div><strong>EHR (PhD)</strong></div>
-      <div class="tl-track"><div class="tl-bar bar-ehr"></div></div>
-    </div>
-
+  <div class="tl-row">
+    <div><strong>Medical Imaging</strong><br><span class="muted">DL • CV</span></div>
+    <div class="tl-track"><div class="tl-bar bar-img"></div></div>
+  </div>
+  <div class="tl-row">
+    <div><strong>Transformers</strong></div>
+    <div class="tl-track"><div class="tl-bar bar-tr"></div></div>
+  </div>
+  <div class="tl-row">
+    <div><strong>EHR (PhD)</strong></div>
+    <div class="tl-track"><div class="tl-bar bar-ehr"></div></div>
   </div>
 </div>
 </div>
 
+<!-- BOTTOM -->
+<div class="section">
+<h2>📚 Academic Activities</h2>
+
+<div class="two-col">
+
+  <!-- LEFT -->
+  <div>
+    <div class="card">
+      <h3>📰 News</h3>
+      <ul>
+        <li>[Conference] NLDL 2026, Tromsø</li>
+        <li>[Teaching] TA – Deep Learning (2025)</li>
+        <li>[Paper] 4 papers at IEEE EMBC 2025</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>👩‍🏫 Teaching & Supervision</h3>
+      <ul>
+        <li>TA – Deep Learning, UCPH</li>
+        <li>Supervisor – 2 MSc theses (IUT)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>📘 Publications</h3>
+      <ul>
+        <li>2025 – Dual-Branch Multi-Task Transformer</li>
+        <li>2024 – Enhanced Nuclei Segmentation</li>
+        <li>2023 – Brain Tumor Segmentation</li>
+        <li>2021 – FAZ Parameter Estimation</li>
+        <li>2020 – Cascaded CNNs</li>
+        <li>2019 – Fetal Ultrasound Segmentation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div>
+    <div class="chart-box">
+      <canvas id="papersChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <canvas id="citationsChart"></canvas>
+    </div>
+  </div>
+
 </div>
+</div>
+
+</div>
+
+<script>
+new Chart(papersChart,{
+  type:'bar',
+  data:{
+    labels:['2019','2020','2021','2022','2023','2024','2025'],
+    datasets:[{data:[3,4,2,3,2,1,6],backgroundColor:'#f48c06'}]
+  },
+  options:{plugins:{legend:{display:false}}}
+});
+
+new Chart(citationsChart,{
+  type:'bar',
+  data:{
+    labels:['2019','2020','2021','2022','2023','2024','2025'],
+    datasets:[{data:[10,45,60,95,105,135,139],backgroundColor:'#76b5c5'}]
+  },
+  options:{plugins:{legend:{display:false}}}
+});
+</script>
+
 </body>
 </html>
