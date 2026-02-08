@@ -71,6 +71,19 @@ body{
   background:#f0f6fc;
 }
 
+  /* ===== STICKY HEADER ===== */
+.sticky-header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(35,87,132,0.08);
+}
+
+
 /* ===== SECTION ===== */
 .section{margin-top:44px}
 .section h2{
@@ -184,22 +197,24 @@ li{margin-bottom:10px;line-height:1.7}
 <body>
 <div class="container">
 
-<!-- HEADER -->
-<div class="header">
-  <div class="header-text">
-    <h1>Zahra Sobhaninia</h1>
-    <p>
-      PhD Fellow in Artificial Intelligence at the University of Copenhagen.
-      Research on Electronic Health Records (EHR) and medical imaging.
-    </p>
-    <div class="links">
-      <a href="mailto:zahra.s@di.ku.dk">Email</a>
-      <a href="#">Google Scholar</a>
-      <a href="#">GitHub</a>
+<!-- STICKY HEADER -->
+<div class="sticky-header">
+  <div class="header">
+    <div class="header-text">
+      <h1>Zahra Sobhaninia</h1>
+      <p>
+        PhD Fellow in Artificial Intelligence at the University of Copenhagen.
+        Research on Electronic Health Records (EHR) and medical imaging.
+      </p>
+      <div class="links">
+        <a href="mailto:zahra.s@di.ku.dk">Email</a>
+        <a href="#">Google Scholar</a>
+        <a href="#">GitHub</a>
+      </div>
     </div>
-  </div>
-  <div class="profile-img">
-    <img src="zahra.jpg" alt="Zahra Sobhaninia">
+    <div class="profile-img">
+      <img src="zahra.jpg" alt="Zahra Sobhaninia">
+    </div>
   </div>
 </div>
 
