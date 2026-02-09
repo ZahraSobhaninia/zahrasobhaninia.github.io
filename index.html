@@ -211,8 +211,10 @@ li{margin-bottom:10px;line-height:1.7}
 .rf-timeline{
   position:relative;
   margin-top:50px;
-  padding:80px 20px 40px;
+  padding:20px 20px 40px;
+  min-height:520px;   /* ← کلیدی‌ترین خط */
 }
+
 
 /* Base line */
 
@@ -235,11 +237,12 @@ li{margin-bottom:10px;line-height:1.7}
 /* Timeline points */
 .rf-point{
   position:absolute;
-  top:131px;
+  top:307px;
   transform:translateX(-50%);
   font-weight:600;
   color:var(--primary);
 }
+
 
   .rf-band{
   position:absolute;
@@ -263,13 +266,12 @@ li{margin-bottom:10px;line-height:1.7}
 }
 .rf-line{
   position:absolute;
-  top:140px;
+  top:320px;
   left:0;
   right:0;
   height:2px;
   background:linear-gradient(to right,#e5e7eb,#c7d2fe,#e5e7eb);
 }
-
 /* Positions */
 .p-2018{left:5%}
 .p-2022{left:35%}
@@ -320,18 +322,6 @@ li{margin-bottom:10px;line-height:1.7}
     left:auto;
   }
 }
-@media(max-width:900px){
-  .rf-band,.rf-line,.rf-point{
-    display:none;
-  }
-  .rf-block{
-    position:relative;
-    width:100%;
-    margin-bottom:30px;
-    left:auto;
-  }
-}
-
 
 </style>
 </head>
