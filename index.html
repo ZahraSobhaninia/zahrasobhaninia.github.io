@@ -160,10 +160,6 @@ li{margin-bottom:10px;line-height:1.7}
   margin-bottom:22px;
 }
 
-@media(max-width:900px){
-  .two-col{grid-template-columns:1fr}
-}
-
 /* CONTENT */
 .rf-content{
   padding:22px 22px 18px;
@@ -202,49 +198,6 @@ li{margin-bottom:10px;line-height:1.7}
 .rf-phase.teal .rf-years{
   background:linear-gradient(90deg,#10b981,#6ee7b7);
 }
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .rf-timeline{
-    flex-direction:column;
-  }
-}
-/* === timeline line === */
-.timeline-line{
-  position: relative;
-  margin-top: 36px;
-  height: 4px;
-  background: rgba(35,87,132,0.15);
-  border-radius: 4px;
-}
-
-/* year markers */
-.timeline-point{
-  position: absolute;
-  top: -10px;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.timeline-dot{
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--accent);
-  margin: 0 auto 6px;
-}
-
-.timeline-year{
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--primary);
-}
-
-/* positioning */
-.tp-2018{ left: 0%; }
-.tp-2022{ left: 50%; }
-.tp-2024{ left: 75%; }
-.tp-now{ left: 100%; }
 
 /* responsive */
 @media(max-width:900px){
