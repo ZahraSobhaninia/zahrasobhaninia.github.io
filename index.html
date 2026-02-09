@@ -92,6 +92,70 @@
   text-decoration:underline;
 }
 
+/* ===== EDUCATION ===== */
+.education .edu-item{
+  display:grid;
+  grid-template-columns:120px 20px 1fr;
+  gap:14px;
+  margin-bottom:26px;
+}
+
+.edu-year{
+  text-align:right;
+  font-weight:600;
+  color:var(--primary);
+}
+
+.edu-marker{
+  position:relative;
+}
+
+.edu-marker::before{
+  content:"";
+  width:10px;
+  height:10px;
+  background:#f48c06;
+  border-radius:50%;
+  display:block;
+  margin-top:6px;
+}
+
+.edu-marker::after{
+  content:"";
+  position:absolute;
+  top:18px;
+  bottom:-28px;
+  left:4px;
+  width:2px;
+  background:rgba(35,87,132,.25);
+}
+
+.edu-item:last-child .edu-marker::after{
+  display:none;
+}
+
+/* 🔽 این قسمت رو دقیقاً اینجا اضافه کن */
+.edu-content a{
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.edu-content a:hover{
+  text-decoration: underline;
+}
+
+.edu-meta{
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+
+
+
   
 *{box-sizing:border-box}
 
@@ -359,46 +423,71 @@ body{
         </p>
       </section>
 
+<section class="section">
+  <h2>Education</h2>
+
+  <div class="education">
+
+    <!-- PhD -->
+    <div class="edu-item">
+      <div class="edu-year">2024–Now</div>
+      <div class="edu-marker"></div>
+      <div class="edu-content">
+        <strong>PhD in Computer Science</strong><br>
+        <a href="https://www.ku.dk/english/" target="_blank" rel="noopener">
+          University of Copenhagen
+        </a><br>
+        <span class="edu-meta">
+          Supervisor:
+          <a href="https://di.ku.dk/ansatte/?pure=da/persons/137906"
+             target="_blank" rel="noopener">
+            Prof. Mads Nielsen
+          </a>
+        </span>
+      </div>
+    </div>
+
+    <!-- MSc -->
+    <div class="edu-item">
+      <div class="edu-year">2017–2020</div>
+      <div class="edu-marker"></div>
+      <div class="edu-content">
+        <strong>M.Sc. in Software Engineering (Artificial Intelligence & Robotics)</strong><br>
+        <a href="https://www.iut.ac.ir/en" target="_blank" rel="noopener">
+          Isfahan University of Technology
+        </a><br>
+        <span class="edu-meta">
+          Thesis: <em>Medical Image Analysis via Multi-Task Learning</em><br>
+          Supervisors:
+          <a href="https://www.seattleu.edu/directory/profiles/shadrokh-samavi-phd.php"
+             target="_blank" rel="noopener">
+            Prof. Shadrokh Samavi
+          </a>,
+          <a href="https://people.iut.ac.ir/en/nader-karimi"
+             target="_blank" rel="noopener">
+            Dr. Nader Karimi
+          </a>
+        </span>
+      </div>
+    </div>
+
+    <!-- BSc -->
+    <div class="edu-item">
+      <div class="edu-year">2008–2012</div>
+      <div class="edu-marker"></div>
+      <div class="edu-content">
+        <strong>B.Sc. in Computer Engineering (Hardware)</strong><br>
+        <a href="https://www.iut.ac.ir/en" target="_blank" rel="noopener">
+          Isfahan University of Technology
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
       
-
-      <!-- EDUCATION -->
-      <section class="section">
-        <h2>Education</h2>
-
-        <div class="education">
-          <div class="edu-item">
-            <div class="edu-year">2024–Now</div>
-            <div class="edu-marker"></div>
-            <div>
-              <strong>PhD in Computer Science</strong><br>
-              University of Copenhagen
-            </div>
-          </div>
-
-          <div class="edu-item">
-            <div class="edu-year">2017–2020</div>
-            <div class="edu-marker"></div>
-            <div>
-              <strong>M.Sc. in Software Engineering</strong><br>
-              Isfahan University of Technology
-            </div>
-          </div>
-        </div>
-
-        <div class="edu-item">
-  <div class="edu-year">2008–2012</div>
-  <div class="edu-marker"></div>
-  <div>
-    <strong>B.Sc. in Computer Engineering (Hardware)</strong><br>
-    Isfahan University of Technology
-  </div>
-</div>
-
-      </section>
-
-
       <!-- RESEARCH FOCUS -->
       <section class="section">
         <h2>Research Focus</h2>
