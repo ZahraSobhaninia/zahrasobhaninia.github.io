@@ -215,14 +215,6 @@ li{margin-bottom:10px;line-height:1.7}
 }
 
 /* Base line */
-.rf-line{
-  position:absolute;
-  top:140px;
-  left:0;
-  right:0;
-  height:2px;
-  background:linear-gradient(to right,#e5e7eb,#c7d2fe,#e5e7eb);
-}
 
 .band-img{
   left:0;
@@ -249,6 +241,14 @@ li{margin-bottom:10px;line-height:1.7}
   color:var(--primary);
 }
 
+  .rf-band{
+  position:absolute;
+  top:270px;
+  height:50px;
+  border-radius:999px;
+  opacity:.28;
+}
+
 .rf-point::before{
   content:"";
   position:absolute;
@@ -260,6 +260,14 @@ li{margin-bottom:10px;line-height:1.7}
   border-radius:50%;
   background:var(--accent);
   box-shadow:0 0 0 6px rgba(244,140,6,.25);
+}
+.rf-line{
+  position:absolute;
+  top:140px;
+  left:0;
+  right:0;
+  height:2px;
+  background:linear-gradient(to right,#e5e7eb,#c7d2fe,#e5e7eb);
 }
 
 /* Positions */
