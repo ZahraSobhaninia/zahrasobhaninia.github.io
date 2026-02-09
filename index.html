@@ -366,12 +366,34 @@ body{
     </div>
 
   </div>
+
+
+        
 </section>
 
     </div>
   </main>
 
 </div>
+<script>
+new Chart(papersChart,{
+  type:'bar',
+  data:{
+    labels:['2019','2020','2021','2022','2023','2024','2025'],
+    datasets:[{data:[3,4,2,3,2,1,6],backgroundColor:'#f48c06'}]
+  },
+  options:{plugins:{legend:{display:false}}}
+});
+
+new Chart(citationsChart,{
+  type:'bar',
+  data:{
+    labels:['2019','2020','2021','2022','2023','2024','2025'],
+    datasets:[{data:[10,45,60,95,105,135,139],backgroundColor:'#76b5c5'}]
+  },
+  options:{plugins:{legend:{display:false}}}
+});
+</script>
 
 </body>
 </html>
