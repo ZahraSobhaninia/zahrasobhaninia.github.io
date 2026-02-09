@@ -30,22 +30,27 @@
 .intro-label {
   display: block;
   font-size: 13px;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 14px;
+
+  color: var(--primary);   /* آبی خاکستری سایت */
+  margin-bottom: 10px;
 }
 
 .intro-text {
-  font-size: 16px;
-  line-height: 1.85;
-  color: var(--text);
+  font-size: 15.5px;
+  line-height: 1.65;          /* کمتر از قبل، جمع‌تر */
+  color: #4b5563;             /* خاکستری آبی‌دار */
   text-align: justify;
 
-  max-width: 62ch;       /* خیلی مهم: عرض ایده‌آل متن */
+  max-width: 60ch;            /* کمی جمع‌تر */
 }
 
-
+.intro-text::first-line {
+  font-weight: 500;
+  color: #374151;
+}
 
   
 *{box-sizing:border-box}
@@ -296,14 +301,16 @@ body{
   <main class="main-content">
     <div class="container">
       <section class="intro">
-  <span class="intro-label">Welcome</span>
-  <p class="intro-text">
-    I am a PhD student in Computer Science at the University of Copenhagen. 
-    My research focuses on AI in healthcare, with a particular emphasis on applying deep learning to Electronic Health Records (EHR), 
-    informed by prior work in medical image analysis. 
-    My work aims to support real-world clinical analysis through robust and interpretable AI models.
-    </p>
-    </section>
+        <span class="intro-label">Welcome</span>
+        <p class="intro-text">
+          I am a PhD student in Computer Science at the University of Copenhagen.
+          My research focuses on AI in healthcare, with a particular emphasis on applying
+          deep learning to Electronic Health Records (EHR), informed by prior work in medical
+          image analysis. My work aims to support real-world clinical analysis through robust
+          and interpretable AI models.
+        </p>
+      </section>
+
 
 
       
