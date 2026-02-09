@@ -159,46 +159,6 @@ li{margin-bottom:10px;line-height:1.7}
   box-shadow:var(--shadow);
   margin-bottom:22px;
 }
-
-/* CONTENT */
-.rf-content{
-  padding:22px 22px 18px;
-}
-.rf-content h3{
-  margin:0 0 12px;
-  font-size:17px;
-  color:#1f2937;
-}
-.rf-content ul{
-  padding-left:18px;
-  margin:0;
-}
-.rf-content li{
-  font-size:14.5px;
-  line-height:1.6;
-  margin-bottom:6px;
-}
-
-/* YEAR BAR */
-.rf-years{
-  text-align:center;
-  font-weight:700;
-  color:white;
-  padding:12px 10px;
-  font-size:15px;
-}
-
-/* COLORS */
-.rf-phase.orange .rf-years{
-  background:linear-gradient(90deg,#f48c06,#f7b25a);
-}
-.rf-phase.blue .rf-years{
-  background:linear-gradient(90deg,#3b82f6,#7aa8ff);
-}
-.rf-phase.teal .rf-years{
-  background:linear-gradient(90deg,#10b981,#6ee7b7);
-}
-
 /* responsive */
 @media(max-width:900px){
   .timeline-row{
@@ -221,20 +181,21 @@ li{margin-bottom:10px;line-height:1.7}
 .rf-cards {
   display: grid;
   grid-template-columns: 1fr auto 1fr auto 1fr;
-  align-items: center;
+  align-items: stretch;
   gap: 24px;
 }
-
-/* Card base */
+/* Colors (very soft fills) */
 .rf-card {
-  height: 170px;
-  padding: 24px 26px;
+  min-height: 140px;
+  padding: 18px 20px;
   border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  background: white;
+  background: #ffffff;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 8px; /* کلیدی */
 }
 
 /* Card text */
@@ -259,19 +220,6 @@ li{margin-bottom:10px;line-height:1.7}
   margin-top: 8px;
 }
 
-/* Colors (very soft fills) */
-.rf-card {
-  min-height: 140px;
-  padding: 18px 20px;
-  border-radius: 18px;
-  background: #ffffff;
-  border: 2px solid transparent;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-
-  display: flex;
-  flex-direction: column;
-  gap: 8px; /* کلیدی */
-}
 
 
 /* Borders */
@@ -310,13 +258,6 @@ li{margin-bottom:10px;line-height:1.7}
 }
 
 
-
-.rf-timeline span {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--primary);
-}
-
 /* Responsive */
 @media (max-width: 900px) {
   .rf-cards {
@@ -336,6 +277,23 @@ li{margin-bottom:10px;line-height:1.7}
   .rf-timeline {
     display: none;
   }
+}
+
+  .rf-timeline {
+  margin-top: 28px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(59,130,246,0.22),
+    rgba(20,184,166,0.22),
+    rgba(249,115,22,0.22)
+  );
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 6px;
 }
 
   
