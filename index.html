@@ -233,112 +233,92 @@ li{margin-bottom:10px;line-height:1.7}
   width:35%;
   background:linear-gradient(90deg,#10b981,#6ee7b7);
 }
-
-/* Timeline points */
-.rf-point{
-  position:absolute;
-  top:307px;
-  transform:translateX(-50%);
-  font-weight:600;
-  color:var(--primary);
+.research-focus {
+  margin-top: 50px;
 }
 
-
-  .rf-band{
-  position:absolute;
-  top:270px;
-  height:50px;
-  border-radius:999px;
-  opacity:.28;
+.research-focus h2 {
+  color: var(--primary);
+  margin-bottom: 32px;
 }
 
-.rf-point::before{
-  content:"";
-  position:absolute;
-  top:-18px;
-  left:50%;
-  transform:translateX(-50%);
-  width:14px;
-  height:14px;
-  border-radius:50%;
-  background:var(--accent);
-  box-shadow:0 0 0 6px rgba(244,140,6,.25);
-}
-.rf-line{
-  position:absolute;
-  top:320px;
-  left:0;
-  right:0;
-  height:2px;
-  background:linear-gradient(to right,#e5e7eb,#c7d2fe,#e5e7eb);
-}
-/* Positions */
-.p-2018{left:5%}
-.p-2022{left:35%}
-.p-2024{left:65%}
-.p-now{left:95%}
-
-/* Content blocks */
-.rf-block{
-  position:absolute;
-  top:0;
-  width:28%;
+.rf-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
 }
 
-.rf-block h3{
-  color:var(--primary);
-  font-size:18px;
-  margin-bottom:12px;
+.rf-col h3 {
+  color: var(--primary);
+  font-size: 20px;
+  margin-bottom: 6px;
 }
 
-.rf-block ul{
-  padding-left:18px;
-  font-size:14.5px;
+.rf-years {
+  display: block;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 14px;
 }
 
-.rf-years{
-  display:inline-block;
-  margin-top:10px;
-  font-weight:600;
-  color:var(--muted);
+.rf-col ul {
+  padding-left: 18px;
+  margin: 0;
 }
 
-.rf-block.left{left:0}
-.rf-block.center{left:36%}
-.rf-block.right{left:68%}
+.rf-col li {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+/* ===== TIMELINE ===== */
+.rf-timeline {
+  position: relative;
+  margin-top: 50px;
+  padding-top: 30px;
+}
+
+.rf-line {
+  height: 2px;
+  background: rgba(35,87,132,0.2);
+  width: 100%;
+}
+
+.rf-point {
+  position: absolute;
+  top: 22px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.rf-point::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 6px;
+}
+
+.rf-point span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
 
 /* Responsive */
-@media(max-width:900px){
-  .rf-timeline{
-    padding-top:20px;
+@media (max-width: 900px) {
+  .rf-columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
-  .rf-band,.rf-line,.rf-point{
-    display:none;
-  }
-  .rf-block{
-    position:relative;
-    width:100%;
-    margin-bottom:30px;
-    left:auto;
+
+  .rf-timeline {
+    display: none;
   }
 }
-
-
-
-  .rf-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-.rf-tags span{
-  font-size:13px;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(35,87,132,.08);
-  color:var(--primary);
-  font-weight:500;
-}
-
 
 
   
@@ -430,55 +410,62 @@ li{margin-bottom:10px;line-height:1.7}
     </div>
   </div>
 
-  <div class="section">
+
+
+  <section class="research-focus">
   <h2>🧪 Research Focus</h2>
 
-  <div class="rf-timeline">
+  <div class="rf-columns">
+    <div class="rf-col">
+      <h3>Medical Image Analysis (M.Sc.)</h3>
+      <span class="rf-years">2018 – 2022</span>
+      <ul>
+        <li>Segmentation & Classification</li>
+        <li>Ultrasound, MRI, Colonoscopy</li>
+        <li>Fundus & Histopathology</li>
+        <li>CNN-based Deep Learning</li>
+        <li>Multi-task Learning</li>
+      </ul>
+    </div>
 
-    <!-- Highlight bands -->
-    <div class="rf-band band-img"></div>
-    <div class="rf-band band-trans"></div>
-    <div class="rf-band band-ehr"></div>
-
-    <!-- Timeline line -->
-    <div class="rf-line"></div>
-
-    <!-- Milestones -->
-    <div class="rf-point p-2018">2018</div>
-    <div class="rf-point p-2022">2022</div>
-    <div class="rf-point p-2024">2024</div>
-    <div class="rf-point p-now">Now</div>
-
-    <!-- Content -->
-    <div class="rf-tags">
-  <span>Segmentation</span>
-  <span>Medical Imaging</span>
-  <span>CNNs</span>
-</div>
-
-
-    <div class="rf-block center">
+    <div class="rf-col">
       <h3>Methodological Transition</h3>
+      <span class="rf-years">2022 – 2024</span>
       <ul>
         <li>CNNs → Vision Transformers</li>
         <li>Transformer-based Imaging</li>
         <li>Representation Learning</li>
       </ul>
-      <span class="rf-years">2022 – 2024</span>
     </div>
 
-    <div class="rf-block right">
+    <div class="rf-col">
       <h3>Electronic Health Records (PhD)</h3>
+      <span class="rf-years">2024 – Present</span>
       <ul>
         <li>Large-scale EHR Data</li>
         <li>Deep Learning Models</li>
         <li>Clinical Transformers</li>
       </ul>
-      <span class="rf-years">2024 – Present</span>
     </div>
-
   </div>
-</div>
+
+  <div class="rf-timeline">
+    <div class="rf-line"></div>
+
+    <div class="rf-point" style="left:0%">
+      <span>2018</span>
+    </div>
+    <div class="rf-point" style="left:50%">
+      <span>2022</span>
+    </div>
+    <div class="rf-point" style="left:75%">
+      <span>2024</span>
+    </div>
+    <div class="rf-point" style="left:100%">
+      <span>Now</span>
+    </div>
+  </div>
+</section>
 
 
 
