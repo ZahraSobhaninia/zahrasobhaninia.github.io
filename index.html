@@ -323,6 +323,25 @@ li{margin-bottom:10px;line-height:1.7}
   }
 }
 
+
+
+  .rf-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.rf-tags span{
+  font-size:13px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(35,87,132,.08);
+  color:var(--primary);
+  font-weight:500;
+}
+
+
+
+  
 </style>
 </head>
 
@@ -431,16 +450,12 @@ li{margin-bottom:10px;line-height:1.7}
     <div class="rf-point p-now">Now</div>
 
     <!-- Content -->
-    <div class="rf-block left">
-      <h3>Medical Image Analysis (M.Sc.)</h3>
-      <ul>
-        <li>Segmentation & Classification</li>
-        <li>Ultrasound, MRI, Colonoscopy</li>
-        <li>Fundus & Histopathology</li>
-        <li>CNN-based Deep Learning</li>
-      </ul>
-      <span class="rf-years">2018 – 2022</span>
-    </div>
+    <div class="rf-tags">
+  <span>Segmentation</span>
+  <span>Medical Imaging</span>
+  <span>CNNs</span>
+</div>
+
 
     <div class="rf-block center">
       <h3>Methodological Transition</h3>
@@ -464,6 +479,8 @@ li{margin-bottom:10px;line-height:1.7}
 
   </div>
 </div>
+
+
 
 
 <!-- BOTTOM -->
