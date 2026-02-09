@@ -254,6 +254,90 @@ li{margin-bottom:10px;line-height:1.7}
     flex-direction:column;
   }
 }
+/* ===== RESEARCH FOCUS – HORIZONTAL TIMELINE ===== */
+
+.research-timeline{
+  margin-top: 28px;
+  position: relative;
+  padding-top: 60px;
+}
+
+.timeline-row{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.timeline-block{
+  text-align: left;
+}
+
+.timeline-block h3{
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.timeline-block .subtitle{
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.timeline-block ul{
+  padding-left: 18px;
+  margin: 0;
+}
+
+.timeline-block li{
+  font-size: 14.5px;
+  margin-bottom: 6px;
+}
+
+/* === timeline line === */
+.timeline-line{
+  position: relative;
+  margin-top: 36px;
+  height: 4px;
+  background: rgba(35,87,132,0.15);
+  border-radius: 4px;
+}
+
+/* year markers */
+.timeline-point{
+  position: absolute;
+  top: -10px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.timeline-dot{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin: 0 auto 6px;
+}
+
+.timeline-year{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* positioning */
+.tp-2018{ left: 0%; }
+.tp-2022{ left: 50%; }
+.tp-2024{ left: 75%; }
+.tp-now{ left: 100%; }
+
+/* responsive */
+@media(max-width:900px){
+  .timeline-row{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
 
 </style>
 </head>
@@ -345,52 +429,69 @@ li{margin-bottom:10px;line-height:1.7}
 
 </div>
 </div>
-
-<!-- RESEARCH FOCUS TIMELINE -->
 <div class="section">
   <h2>🧪 Research Focus</h2>
 
-  <div class="rf-timeline">
+  <div class="research-timeline">
 
-    <!-- Phase 1 -->
-    <div class="rf-phase orange">
-      <div class="rf-content">
+    <!-- TEXT ABOVE -->
+    <div class="timeline-row">
+
+      <div class="timeline-block">
         <h3>Medical Image Analysis (M.Sc.)</h3>
+        <div class="subtitle">2018 – 2022</div>
         <ul>
           <li>Segmentation & Classification</li>
-          <li>Ultrasound, MRI</li>
-          <li>Colonoscopy, Fundus, Histopathology</li>
+          <li>Ultrasound, MRI, Colonoscopy</li>
+          <li>Fundus & Histopathology</li>
           <li>CNN-based Deep Learning</li>
-          <li>Multi-task & Representation Learning</li>
+          <li>Multi-task Learning</li>
         </ul>
       </div>
-      <div class="rf-years">2018 – 2022</div>
-    </div>
 
-    <!-- Phase 2 -->
-    <div class="rf-phase blue">
-      <div class="rf-content">
+      <div class="timeline-block">
         <h3>Methodological Transition</h3>
+        <div class="subtitle">2022 – 2024</div>
         <ul>
           <li>CNNs → Vision Transformers</li>
           <li>Transformer-based Medical Imaging</li>
-          <li>Advanced Representation Learning</li>
+          <li>Representation Learning</li>
         </ul>
       </div>
-      <div class="rf-years">2022 – 2024</div>
-    </div>
 
-    <!-- Phase 3 -->
-    <div class="rf-phase teal">
-      <div class="rf-content">
+      <div class="timeline-block">
         <h3>Electronic Health Records (PhD)</h3>
+        <div class="subtitle">2024 – Present</div>
         <ul>
           <li>Large-scale EHR Data</li>
           <li>Deep Learning Models</li>
           <li>Transformers for Clinical Modeling</li>
         </ul>
       </div>
-      <div class="rf-years">2024 – Present</div>
+
+    </div>
+
+    <!-- LINE -->
+    <div class="timeline-line">
+      <div class="timeline-point tp-2018">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2018</div>
+      </div>
+
+      <div class="timeline-point tp-2022">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2022</div>
+      </div>
+
+      <div class="timeline-point tp-2024">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2024</div>
+      </div>
+
+      <div class="timeline-point tp-now">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Now</div>
+      </div>
     </div>
 
   </div>
