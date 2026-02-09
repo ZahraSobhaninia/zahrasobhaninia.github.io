@@ -52,6 +52,46 @@
   color: #374151;
 }
 
+
+  .title-block{
+  text-align:center;
+}
+
+.role{
+  font-size:14.5px;
+  font-weight:600;
+  color:#3f5873;   /* آبی-خاکستری */
+  line-height:1.45;
+  margin-top:6px;
+}
+
+.focus{
+  margin-top:10px;
+  font-size:13.5px;
+  line-height:1.55;
+  color:#6b7280;   /* خاکستری شیک */
+}
+
+
+  /*Links */
+  .links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:14px;
+}
+
+.links a{
+  font-size:14px;
+  font-weight:600;
+  color:#235784;
+  text-decoration:none;
+}
+
+.links a:hover{
+  text-decoration:underline;
+}
+
   
 *{box-sizing:border-box}
 
@@ -282,19 +322,25 @@ body{
 
 <div class="page">
 
+
+  
   <!-- SIDE HEADER -->
   <aside class="side-header">
     <img src="zahra.jpg" alt="Zahra Sobhaninia">
     <h1>Zahra Sobhaninia</h1>
-    <p>
-      PhD Fellow in Artificial Intelligence at the University of Copenhagen.
-      Research on deep learning for EHR and medical image analysis.
-    </p>
-    <div class="links">
-      <a href="mailto:zahra.s@di.ku.dk">Email</a>
-      <a href="#">Scholar</a>
-      <a href="#">GitHub</a>
-    </div>
+   <div class="title-block">
+  <div class="role">
+    PhD Fellow in Computer Science (AI)<br>
+    University of Copenhagen
+  </div>
+</div>
+<div class="links">
+  <a href="mailto:zahra.s@di.ku.dk">Email</a>
+  <a href="https://scholar.google.com/citations?user=BmvVLu8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+  <a href="https://github.com/ZahraSobhaninia" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://www.linkedin.com/in/zahra-sobhaninia-48a146b9/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+
   </aside>
 
   <!-- MAIN -->
