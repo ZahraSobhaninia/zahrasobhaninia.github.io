@@ -166,112 +166,98 @@ li{margin-bottom:10px;line-height:1.7}
     gap: 24px;
   }
 }
-
-  /* ===== Research Focus ===== */
+/* ===== Research Focus ===== */
 .research-focus {
-  margin-top: 60px;
+  margin-top: 56px;
 }
 
 .research-focus h2 {
   color: var(--primary);
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
-/* Cards layout */
+/* Cards */
 .rf-cards {
   display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr;
-  align-items: stretch;
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
-/* Colors (very soft fills) */
+
 .rf-card {
-  min-height: 140px;
-  padding: 18px 20px;
-  border-radius: 18px;
-  background: #ffffff;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #fff;
   border: 2px solid transparent;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  min-height: 120px;
 
   display: flex;
   flex-direction: column;
-  gap: 8px; /* کلیدی */
+  gap: 6px;
 }
 
-/* Card text */
 .rf-card h3 {
   margin: 0;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 17px;
   color: var(--primary);
 }
 
-
 .rf-card p {
   margin: 0;
-  font-size: 15px;
+  font-size: 14.5px;
   line-height: 1.25;
   color: var(--text);
 }
 
-.rf-year {
-  font-weight: 600;
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-
-
 /* Borders */
-.rf-blue {
-  border-color: rgba(59, 130, 246, 0.30);
-}
+.rf-blue   { border-color: rgba(59,130,246,0.30); }
+.rf-teal   { border-color: rgba(20,184,166,0.30); }
+.rf-orange { border-color: rgba(249,115,22,0.35); }
 
-.rf-teal {
-  border-color: rgba(20, 184, 166, 0.30);
-}
-
-.rf-orange {
-  border-color: rgba(249, 115, 22, 0.35);
-}
-
-
-  .rf-card:hover {
-  transform: translateY(-4px);
-  transition: all 0.25s ease;
-}
-
-/* Arrow */
-.rf-arrow {
-  font-size: 26px;
-  color: var(--muted);
-  user-select: none;
-}
-
-/* Timeline */
-.rf-timeline span {
+/* ===== Timeline Arrow ===== */
+.rf-timeline {
   position: relative;
-  top: 12px;
+  margin-top: 34px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(59,130,246,0.18),
+    rgba(20,184,166,0.18),
+    rgba(249,115,22,0.18)
+  );
+}
+
+/* Arrow head */
+.rf-timeline::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 10px solid rgba(249,115,22,0.35);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+/* Years */
+.rf-timeline span {
+  position: absolute;
+  top: 14px;
   font-size: 14px;
   font-weight: 600;
   color: var(--primary);
 }
 
+.t-left  { left: 0; }
+.t-mid   { left: 50%; transform: translateX(-50%); }
+.t-right { right: 0; }
 
 /* Responsive */
 @media (max-width: 900px) {
   .rf-cards {
     grid-template-columns: 1fr;
-    align-items: stretch;
-
-  }
-
-  .rf-arrow {
-    display: none;
-  }
-
-  .rf-card {
-    height: auto;
+    gap: 20px;
   }
 
   .rf-timeline {
@@ -386,42 +372,34 @@ li{margin-bottom:10px;line-height:1.7}
   </div>
 
 
-  <section class="section research-focus">
-  <h2> Research Focus</h2>
+<section class="section research-focus">
+  <h2>Research Focus</h2>
 
   <div class="rf-cards">
-    <!-- Card 1 -->
     <div class="rf-card rf-blue">
       <h3>Medical Image Analysis</h3>
       <p>Multi-task Learning</p>
     </div>
 
-    <!-- Arrow -->
-    <div class="rf-arrow">→</div>
-
-    <!-- Card 2 -->
     <div class="rf-card rf-teal">
       <h3>Representation Learning</h3>
-      <p>CNN to Transformer</p>
+      <p>CNN → Transformer</p>
     </div>
 
-    <!-- Arrow -->
-    <div class="rf-arrow">→</div>
-
-    <!-- Card 3 -->
     <div class="rf-card rf-orange">
-      <h3> AI in Health</h3>
-      <p>Electronic Health Record <br>Decision Support</p>
+      <h3>AI in Health</h3>
+      <p>EHR Decision Support</p>
     </div>
   </div>
 
-  <!-- Timeline -->
+  <!-- Timeline Arrow -->
   <div class="rf-timeline">
-    <span>2018</span>
-    <span>2022</span>
-    <span>Now</span>
+    <span class="t-left">2018</span>
+    <span class="t-mid">2022</span>
+    <span class="t-right">Now</span>
   </div>
 </section>
+
 
 
   
