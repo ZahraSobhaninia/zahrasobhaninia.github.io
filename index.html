@@ -239,15 +239,17 @@ li{margin-bottom:10px;line-height:1.7}
 
 /* Card text */
 .rf-card h3 {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 18px;
+  font-weight: 600;
   color: var(--primary);
 }
+
 
 .rf-card p {
   margin: 0;
   font-size: 15px;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--text);
 }
 
@@ -259,28 +261,30 @@ li{margin-bottom:10px;line-height:1.7}
 
 /* Colors (very soft fills) */
 .rf-card {
-  height: 170px;
-  padding: 24px 26px;
+  min-height: 140px;
+  padding: 18px 20px;
   border-radius: 18px;
   background: #ffffff;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+  border: 2px solid transparent;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid transparent;
+  gap: 8px; /* کلیدی */
 }
+
 
 /* Borders */
 .rf-blue {
-  border-color: rgba(59, 130, 246, 0.35);
+  border-color: rgba(59, 130, 246, 0.30);
 }
 
 .rf-teal {
-  border-color: rgba(20, 184, 166, 0.35);
+  border-color: rgba(20, 184, 166, 0.30);
 }
 
 .rf-orange {
-  border-color: rgba(249, 115, 22, 0.4);
+  border-color: rgba(249, 115, 22, 0.35);
 }
 
 
@@ -297,16 +301,12 @@ li{margin-bottom:10px;line-height:1.7}
 }
 
 /* Timeline */
-.rf-timeline {
-  margin-top: 32px;
-  height: 6px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    rgba(59,130,246,0.25),
-    rgba(20,184,166,0.25),
-    rgba(249,115,22,0.25)
-  );
+.rf-timeline span {
+  position: relative;
+  top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
 }
 
 
@@ -321,6 +321,8 @@ li{margin-bottom:10px;line-height:1.7}
 @media (max-width: 900px) {
   .rf-cards {
     grid-template-columns: 1fr;
+    align-items: stretch;
+
   }
 
   .rf-arrow {
