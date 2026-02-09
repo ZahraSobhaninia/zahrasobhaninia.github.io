@@ -191,6 +191,70 @@ li{margin-bottom:10px;line-height:1.7}
 @media(max-width:900px){
   .two-col{grid-template-columns:1fr}
 }
+
+  /* ===== RESEARCH FOCUS TIMELINE ===== */
+.rf-timeline{
+  display:flex;
+  gap:28px;
+  margin-top:28px;
+}
+
+.rf-phase{
+  flex:1;
+  background:var(--card);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* CONTENT */
+.rf-content{
+  padding:22px 22px 18px;
+}
+.rf-content h3{
+  margin:0 0 12px;
+  font-size:17px;
+  color:#1f2937;
+}
+.rf-content ul{
+  padding-left:18px;
+  margin:0;
+}
+.rf-content li{
+  font-size:14.5px;
+  line-height:1.6;
+  margin-bottom:6px;
+}
+
+/* YEAR BAR */
+.rf-years{
+  text-align:center;
+  font-weight:700;
+  color:white;
+  padding:12px 10px;
+  font-size:15px;
+}
+
+/* COLORS */
+.rf-phase.orange .rf-years{
+  background:linear-gradient(90deg,#f48c06,#f7b25a);
+}
+.rf-phase.blue .rf-years{
+  background:linear-gradient(90deg,#3b82f6,#7aa8ff);
+}
+.rf-phase.teal .rf-years{
+  background:linear-gradient(90deg,#10b981,#6ee7b7);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .rf-timeline{
+    flex-direction:column;
+  }
+}
+
 </style>
 </head>
 
@@ -282,23 +346,54 @@ li{margin-bottom:10px;line-height:1.7}
 </div>
 </div>
 
-<!-- RESEARCH FOCUS -->
+<!-- RESEARCH FOCUS TIMELINE -->
 <div class="section">
-<h2>🧪 Research Focus</h2>
-<div class="focus-card">
-  <div class="tl-row">
-    <div><strong>Medical Imaging</strong><br><span class="muted">DL • CV</span></div>
-    <div class="tl-track"><div class="tl-bar bar-img"></div></div>
+  <h2>🧪 Research Focus</h2>
+
+  <div class="rf-timeline">
+
+    <!-- Phase 1 -->
+    <div class="rf-phase orange">
+      <div class="rf-content">
+        <h3>Medical Image Analysis (M.Sc.)</h3>
+        <ul>
+          <li>Segmentation & Classification</li>
+          <li>Ultrasound, MRI</li>
+          <li>Colonoscopy, Fundus, Histopathology</li>
+          <li>CNN-based Deep Learning</li>
+          <li>Multi-task & Representation Learning</li>
+        </ul>
+      </div>
+      <div class="rf-years">2018 – 2022</div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="rf-phase blue">
+      <div class="rf-content">
+        <h3>Methodological Transition</h3>
+        <ul>
+          <li>CNNs → Vision Transformers</li>
+          <li>Transformer-based Medical Imaging</li>
+          <li>Advanced Representation Learning</li>
+        </ul>
+      </div>
+      <div class="rf-years">2022 – 2024</div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="rf-phase teal">
+      <div class="rf-content">
+        <h3>Electronic Health Records (PhD)</h3>
+        <ul>
+          <li>Large-scale EHR Data</li>
+          <li>Deep Learning Models</li>
+          <li>Transformers for Clinical Modeling</li>
+        </ul>
+      </div>
+      <div class="rf-years">2024 – Present</div>
+    </div>
+
   </div>
-  <div class="tl-row">
-    <div><strong>Transformers</strong></div>
-    <div class="tl-track"><div class="tl-bar bar-tr"></div></div>
-  </div>
-  <div class="tl-row">
-    <div><strong>EHR (PhD)</strong></div>
-    <div class="tl-track"><div class="tl-bar bar-ehr"></div></div>
-  </div>
-</div>
 </div>
 
 <!-- BOTTOM -->
