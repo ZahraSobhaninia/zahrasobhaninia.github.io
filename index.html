@@ -258,16 +258,35 @@ li{margin-bottom:10px;line-height:1.7}
 }
 
 /* Colors (very soft fills) */
+.rf-card {
+  height: 170px;
+  padding: 24px 26px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid transparent;
+}
+
+/* Borders */
 .rf-blue {
-  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.35);
 }
 
 .rf-teal {
-  background: rgba(20, 184, 166, 0.08);
+  border-color: rgba(20, 184, 166, 0.35);
 }
 
 .rf-orange {
-  background: rgba(249, 115, 22, 0.10);
+  border-color: rgba(249, 115, 22, 0.4);
+}
+
+
+  .rf-card:hover {
+  transform: translateY(-4px);
+  transition: all 0.25s ease;
 }
 
 /* Arrow */
@@ -280,18 +299,14 @@ li{margin-bottom:10px;line-height:1.7}
 /* Timeline */
 .rf-timeline {
   margin-top: 36px;
-  height: 6px;
-  background: linear-gradient(
-    90deg,
-    #3b82f6,
-    #14b8a6,
-    #f97316
-  );
+  height: 4px;
+  background: #e5e7eb; /* light neutral gray */
   border-radius: 999px;
   display: flex;
   justify-content: space-between;
-  padding: 18px 4px 0;
+  padding: 16px 4px 0;
 }
+
 
 .rf-timeline span {
   font-size: 14px;
