@@ -207,118 +207,111 @@ li{margin-bottom:10px;line-height:1.7}
   }
 }
 
-  /* ===== RESEARCH FOCUS TIMELINE ===== */
-.rf-timeline{
+  /* === Research Focus === */
+.rf-wrapper{
+  margin-top:40px;
+}
+
+.rf-cards{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.rf-card{
+  flex:1;
+  padding:22px;
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.rf-card h3{
+  margin:0 0 8px;
+  font-size:18px;
+  color:#1f2937;
+}
+
+.rf-card p{
+  margin:0;
+  font-size:14.5px;
+  color:#4b5563;
+}
+
+.rf-year{
+  display:block;
+  margin-top:12px;
+  font-size:13px;
+  font-weight:600;
+  color:#6b7280;
+}
+
+/* Card colors */
+.rf-card.blue{
+  border-top:4px solid #3b82f6;
+}
+.rf-card.purple{
+  border-top:4px solid #8b5cf6;
+}
+.rf-card.orange{
+  border-top:4px solid #f59e0b;
+}
+
+.rf-arrow{
+  font-size:26px;
+  color:#9ca3af;
+  font-weight:600;
+}
+
+/* Timeline */
+.rf-timeline-bar{
+  margin:34px 0 12px;
+  height:6px;
+  border-radius:6px;
+  background:linear-gradient(90deg,
+    #3b82f6,
+    #8b5cf6,
+    #f59e0b
+  );
   position:relative;
-  margin-top:50px;
-  padding:20px 20px 40px;
-  min-height:520px;   /* ← کلیدی‌ترین خط */
 }
 
-
-/* Base line */
-
-.band-img{
-  left:0;
-  width:45%;
-  background:linear-gradient(90deg,#f48c06,#f7b267);
-}
-.band-trans{
-  left:35%;
-  width:35%;
-  background:linear-gradient(90deg,#3b82f6,#7aa8ff);
-}
-.band-ehr{
-  left:65%;
-  width:35%;
-  background:linear-gradient(90deg,#10b981,#6ee7b7);
-}
-.research-focus {
-  margin-top: 50px;
+.rf-timeline-bar .dot{
+  position:absolute;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#fff;
+  border:4px solid currentColor;
 }
 
-.research-focus h2 {
-  color: var(--primary);
-  margin-bottom: 32px;
-}
+.dot.start{left:0%; color:#3b82f6}
+.dot.mid{left:50%; color:#8b5cf6}
+.dot.now{left:100%; color:#f59e0b}
 
-.rf-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-}
-
-.rf-col h3 {
-  color: var(--primary);
-  font-size: 20px;
-  margin-bottom: 6px;
-}
-
-.rf-years {
-  display: block;
-  color: var(--muted);
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-
-.rf-col ul {
-  padding-left: 18px;
-  margin: 0;
-}
-
-.rf-col li {
-  font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 6px;
-}
-
-/* ===== TIMELINE ===== */
-.rf-timeline {
-  position: relative;
-  margin-top: 50px;
-  padding-top: 30px;
-}
-
-.rf-line {
-  height: 2px;
-  background: rgba(35,87,132,0.2);
-  width: 100%;
-}
-
-.rf-point {
-  position: absolute;
-  top: 22px;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.rf-point::before {
-  content: "";
-  width: 14px;
-  height: 14px;
-  background: var(--accent);
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 6px;
-}
-
-.rf-point span {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--primary);
+/* Years */
+.rf-years{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  font-weight:600;
+  color:#374151;
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .rf-columns {
-    grid-template-columns: 1fr;
-    gap: 32px;
+@media(max-width:900px){
+  .rf-cards{
+    flex-direction:column;
+    align-items:stretch;
   }
-
-  .rf-timeline {
-    display: none;
+  .rf-arrow{
+    display:none;
   }
 }
+
 
 
   
@@ -411,58 +404,53 @@ li{margin-bottom:10px;line-height:1.7}
   </div>
 
 
-
-  <section class="research-focus">
+<section class="section">
   <h2>🧪 Research Focus</h2>
 
-  <div class="rf-columns">
-    <div class="rf-col">
-      <h3>Medical Image Analysis</h3>
-      <ul>
-        <li> Medical image segmentation & classification</li>
-        <li>Diverse clinical imaging modalities</li>
-        <li>CNN-based multi-task learning</li>
-      </ul>
+  <div class="rf-wrapper">
+
+    <!-- Cards -->
+    <div class="rf-cards">
+
+      <div class="rf-card blue">
+        <h3>Medical Image Analysis</h3>
+        <p>Segmentation · Multi-task Imaging</p>
+        <span class="rf-year">2018</span>
+      </div>
+
+      <div class="rf-arrow">→</div>
+
+      <div class="rf-card purple">
+        <h3>Representation Learning</h3>
+        <p>CNN → Transformer · Generalization</p>
+        <span class="rf-year">2022</span>
+      </div>
+
+      <div class="rf-arrow">→</div>
+
+      <div class="rf-card orange">
+        <h3>Clinical AI & EHR</h3>
+        <p>EHR · Clinical Transformers</p>
+        <span class="rf-year">Now</span>
+      </div>
+
     </div>
 
-    <div class="rf-col">
-      <h3>Methodological Transition</h3>
-      <ul>
-        <li>From CNNs to Transformers</li>
-        <li>Representation learning for vision</li>
-        <li>Generalization beyond single tasks</li>
-      </ul>
+    <!-- Timeline -->
+    <div class="rf-timeline-bar">
+      <span class="dot start"></span>
+      <span class="dot mid"></span>
+      <span class="dot now"></span>
     </div>
 
-    <div class="rf-col">
-      <h3>Electronic Health Records (PhD)</h3>
-      <ul>
-        <li>Large-scale EHR modeling</li>
-        <li>Clinical representation learning</li>
-        <li>Transformer-based decision support</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="rf-timeline">
-    <div class="rf-line"></div>
-
-    <div class="rf-point" style="left:0%">
+    <div class="rf-years">
       <span>2018</span>
-    </div>
-    <div class="rf-point" style="left:50%">
       <span>2022</span>
-    </div>
-    <div class="rf-point" style="left:75%">
-      <span>2024</span>
-    </div>
-    <div class="rf-point" style="left:100%">
       <span>Now</span>
     </div>
+
   </div>
 </section>
-
-
 
 
 <!-- BOTTOM -->
