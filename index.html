@@ -418,59 +418,67 @@ body{
 }
 
 
-
-/* News */
-  /* ===== Academic Activities ===== */
-.subsection-title{
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 14px;
+/* News cards */
+.news-cards{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
 }
 
-.news-list{
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.news-item{
+  background:#fff;
+  border-radius:14px;
+  padding:14px 18px;
+  box-shadow:0 6px 18px rgba(0,0,0,.05);
+  border-left:5px solid transparent;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
 
-.news-list li{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  line-height: 1.5;
+.news-item:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 26px rgba(0,0,0,.08);
 }
 
-/* Tags */
+/* Color accents */
+.news-item.conference{ border-color: rgba(59,130,246,.6); }
+.news-item.teaching{ border-color: rgba(20,184,166,.6); }
+.news-item.paper{ border-color: rgba(249,115,22,.7); }
+
+/* Header row */
+.news-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:6px;
+}
+
 .news-tag{
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 999px;
-  white-space: nowrap;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  color:var(--muted);
 }
 
-.news-tag.conference{
-  background: rgba(59,130,246,.12);
-  color: #235784;
+.news-year{
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--muted);
 }
 
-.news-tag.teaching{
-  background: rgba(20,184,166,.12);
-  color: #0f766e;
+/* Content */
+.news-title{
+  font-size:15.5px;
+  font-weight:600;
+  color:var(--primary);
+  margin-bottom:2px;
 }
 
-.news-tag.paper{
-  background: rgba(249,115,22,.14);
-  color: #c2410c;
+.news-desc{
+  font-size:14px;
+  line-height:1.5;
+  color:var(--text);
 }
-
-.news-text{
-  color: var(--text);
-}
-
 
   
 </style>
@@ -613,26 +621,47 @@ body{
       </section>
 
 
-      <div class="academic-block">
+<div class="academic-block">
   <h3 class="subsection-title">News</h3>
 
-  <ul class="news-list">
-    <li>
-      <span class="news-tag conference">Conference</span>
-      <span class="news-text">NLDL 2026, Tromsø</span>
-    </li>
+  <div class="news-cards">
 
-    <li>
-      <span class="news-tag teaching">Teaching</span>
-      <span class="news-text">TA – Deep Learning (2025)</span>
-    </li>
+    <div class="news-item conference">
+      <div class="news-header">
+        <span class="news-tag">Conference</span>
+        <span class="news-year">2026</span>
+      </div>
+      <div class="news-title">NLDL 2026, Tromsø</div>
+      <div class="news-desc">
+        Accepted contribution at Nordic Conference on Deep Learning.
+      </div>
+    </div>
 
-    <li>
-      <span class="news-tag paper">Paper</span>
-      <span class="news-text">4 papers at IEEE EMBC 2025</span>
-    </li>
-  </ul>
+    <div class="news-item teaching">
+      <div class="news-header">
+        <span class="news-tag">Teaching</span>
+        <span class="news-year">2025</span>
+      </div>
+      <div class="news-title">Teaching Assistant – Deep Learning</div>
+      <div class="news-desc">
+        Graduate-level course, University of Copenhagen.
+      </div>
+    </div>
+
+    <div class="news-item paper">
+      <div class="news-header">
+        <span class="news-tag">Publication</span>
+        <span class="news-year">2025</span>
+      </div>
+      <div class="news-title">IEEE EMBC</div>
+      <div class="news-desc">
+        Four accepted papers on medical AI and representation learning.
+      </div>
+    </div>
+
+  </div>
 </div>
+
 
       <section class="section">
   <h2>Academic Activities</h2>
