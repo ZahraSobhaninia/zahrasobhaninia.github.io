@@ -434,27 +434,45 @@ body{
 }
 
 
-  .news-section h2{
-  font-size:22px;
+ .news-section h2{
+  font-size:20px;
   font-weight:600;
   color:var(--primary);
-  margin-bottom:36px;
+  margin-bottom:28px;
 }
 
-.news-entry{
-  margin-bottom:42px;
+/* grid layout */
+.news-grid{
+  display:grid;
+  gap:18px;
 }
 
-.news-type{
+/* card */
+.news-card{
+  padding:18px 20px;
+  border-radius:14px;
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,0.06);
+  transition:all .2s ease;
+}
+
+.news-card:hover{
+  border-color:rgba(35,87,132,.25);
+  transform:translateY(-2px);
+}
+
+/* meta */
+.news-meta{
   font-size:12px;
-  letter-spacing:1.5px;
+  letter-spacing:.5px;
   text-transform:uppercase;
   color:var(--muted);
-  margin-bottom:8px;
+  margin-bottom:6px;
 }
 
+/* title */
 .news-title{
-  font-size:20px;
+  font-size:17px;
   font-weight:600;
   color:#1f2937;
   margin-bottom:6px;
@@ -469,15 +487,15 @@ body{
   color:var(--primary);
 }
 
+/* description */
 .news-desc{
-  font-size:16px;
+  font-size:14.5px;
   color:#4b5563;
-  line-height:1.6;
+  line-height:1.5;
 }
 
-  .news-entry:not(:last-child){
-  padding-bottom:32px;
-  border-bottom:1px solid rgba(0,0,0,0.05);
+  .news-card{
+  border-left:3px solid var(--primary);
 }
 
   
@@ -531,37 +549,38 @@ body{
 <section class="section news-section">
   <h2>Selected News</h2>
 
-  <div class="news-entry">
-    <div class="news-type">Conference</div>
-    <div class="news-title">NLDL 2026, Tromsø</div>
-    <div class="news-desc">
-      Presented research at the Nordic Conference on Deep Learning.
-    </div>
-  </div>
+  <div class="news-grid">
 
-  <div class="news-entry">
-    <div class="news-type">Teaching</div>
-    <div class="news-title">Teaching Assistant – Deep Learning</div>
-    <div class="news-desc">
-      Graduate-level course, University of Copenhagen (2025).
+    <div class="news-card">
+      <div class="news-meta">Conference · 2026</div>
+      <div class="news-title">NLDL 2026, Tromsø</div>
+      <div class="news-desc">
+        Presented research at the Nordic Conference on Deep Learning.
+      </div>
     </div>
-  </div>
 
-  <div class="news-entry">
-    <div class="news-type">Publication</div>
-    <div class="news-title">
-      <a href="YOUR_LINK_HERE" target="_blank">
-        4 papers at IEEE EMBC 2025
-      </a>
+    <div class="news-card">
+      <div class="news-meta">Teaching · 2025</div>
+      <div class="news-title">Teaching Assistant – Deep Learning</div>
+      <div class="news-desc">
+        Graduate-level course, University of Copenhagen.
+      </div>
     </div>
-    <div class="news-desc">
-      Medical AI & representation learning.
+
+    <div class="news-card">
+      <div class="news-meta">Publication · 2025</div>
+      <div class="news-title">
+        <a href="YOUR_LINK" target="_blank">
+          4 papers at IEEE EMBC 2025
+        </a>
+      </div>
+      <div class="news-desc">
+        Medical AI & representation learning.
+      </div>
     </div>
+
   </div>
 </section>
-
-
-
 
 
       
