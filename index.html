@@ -427,47 +427,39 @@ body{
   .news-list{
   display:flex;
   flex-direction:column;
-  gap:22px;
+  gap:26px;
 }
 
 .news-item{
-  display:flex;
+  display:grid;
+  grid-template-columns:130px 1fr;
   gap:20px;
-  align-items:flex-start;
 }
 
-.news-tag{
-  min-width:110px;
+.news-type{
   font-size:13px;
   letter-spacing:1px;
   text-transform:uppercase;
-  font-weight:600;
   color:var(--muted);
+  font-weight:600;
 }
 
 .news-content strong{
-  font-size:17px;
+  font-size:18px;
   color:var(--primary);
 }
 
-.news-content p{
-  margin:6px 0 0;
-  font-size:14.5px;
-  color:var(--text);
-  line-height:1.5;
-}
-
-/* link style */
 .news-content a{
   color:var(--primary);
   text-decoration:none;
-  transition:opacity .2s ease;
 }
 
 .news-content a:hover{
-  opacity:.65;
+  text-decoration:underline;
 }
 
+
+  
   
 </style>
 </head>
@@ -515,35 +507,43 @@ body{
       </section>
 
 
+
       <section class="section">
   <h2>Selected News</h2>
 
-  <div class="news-item">
-    <span class="news-tag">Conference</span>
-    <div>
-      <strong>NLDL 2026, Tromsø</strong><br>
-      Accepted paper at Nordic Conference on Deep Learning.
-    </div>
-  </div>
+  <div class="news-list">
 
-  <div class="news-item">
-    <span class="news-tag">Teaching</span>
-    <div>
-      <strong>Teaching Assistant – Deep Learning</strong><br>
-      Graduate-level course, University of Copenhagen (2025).
+    <div class="news-item">
+      <div class="news-type">Conference</div>
+      <div class="news-content">
+        <strong>NLDL 2026, Tromsø</strong><br>
+        Presented research at the Nordic Conference on Deep Learning.
+      </div>
     </div>
-  </div>
 
-  <div class="news-item">
-    <span class="news-tag">Publication</span>
-    <div>
-      <strong>4 papers at IEEE EMBC 2025</strong><br>
-      Medical AI & representation learning.
+    <div class="news-item">
+      <div class="news-type">Teaching</div>
+      <div class="news-content">
+        <strong>Teaching Assistant – Deep Learning</strong><br>
+        Graduate-level course, University of Copenhagen (2025).
+      </div>
     </div>
-  </div>
 
+    <div class="news-item">
+      <div class="news-type">Publication</div>
+      <div class="news-content">
+        <strong>
+          <a href="https://www.linkedin.com/posts/zahra-sobhaninia-48a146b9_embc2025-healthcare-biomedicalai-ugcPost-7354913351719645185-Qp7L"
+             target="_blank" rel="noopener">
+             4 papers at IEEE EMBC 2025
+          </a>
+        </strong><br>
+        Medical AI & representation learning.
+      </div>
+    </div>
+
+  </div>
 </section>
-
 
 
       
