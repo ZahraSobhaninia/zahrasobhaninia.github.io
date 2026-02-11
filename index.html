@@ -421,56 +421,66 @@ body{
   .rf-cards{grid-template-columns:1fr}
   .rf-timeline{display:none}
 }
-.news-section h2{
-  font-size:20px;
+
+
+
+  .news-section h2{
+  font-size:18px;
   font-weight:600;
+  margin-bottom:20px;
   color:var(--primary);
-  margin-bottom:32px;
 }
 
 .news-item{
-  margin-bottom:36px;
-  padding-bottom:24px;
-  border-bottom:1px solid rgba(0,0,0,0.06);
+  margin-bottom:22px;
+  padding-bottom:14px;
+  border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
-.news-header{
+.news-meta{
   display:flex;
   justify-content:space-between;
-  font-size:12px;
+  font-size:11px;
   text-transform:uppercase;
-  letter-spacing:.8px;
-  color:var(--muted);
-  margin-bottom:6px;
+  letter-spacing:.6px;
+  color:#6b7280;
+  margin-bottom:4px;
 }
 
 .news-title{
-  font-size:18px;
+  font-size:16px;
   font-weight:600;
   color:#1f2937;
-  margin-bottom:6px;
+  margin-bottom:4px;
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
 
-.news-title a{
-  color:#1f2937;
+.news-link{
+  font-size:13px;
+  color:#9ca3af;
   text-decoration:none;
 }
 
-.news-title a:hover{
+.news-link:hover{
   color:var(--primary);
 }
 
 .news-desc{
-  font-size:15px;
-  line-height:1.6;
+  font-size:14px;
+  line-height:1.4;
   color:#4b5563;
 }
 
- .news-title{
-  font-size:17px;
-  font-weight:500;
+.news-item{
+  margin-bottom:16px;
+  padding-bottom:10px;
 }
- 
+
+.news-desc{
+  font-size:13.5px;
+}
   
 </style>
 </head>
@@ -518,49 +528,40 @@ body{
       </section>
 
 
-<section class="news-section">
+
+
+      <section class="news-section">
   <h2>Selected News</h2>
 
   <div class="news-item">
-    <div class="news-header">
+    <div class="news-meta">
       <span class="news-type">Conference</span>
       <span class="news-year">2026</span>
     </div>
-    <div class="news-title">NLDL 2026, Tromsø</div>
+    <div class="news-title">
+      NLDL 2026, Tromsø
+      <a href="#" target="_blank" class="news-link">↗</a>
+    </div>
     <div class="news-desc">
       Presented research at the Nordic Conference on Deep Learning.
     </div>
   </div>
 
   <div class="news-item">
-    <div class="news-header">
+    <div class="news-meta">
       <span class="news-type">Teaching</span>
       <span class="news-year">2025</span>
     </div>
-    <div class="news-title">Teaching Assistant – Deep Learning</div>
+    <div class="news-title">
+      Teaching Assistant – Deep Learning
+      <a href="#" target="_blank" class="news-link">↗</a>
+    </div>
     <div class="news-desc">
       Graduate-level course, University of Copenhagen.
     </div>
   </div>
 
-  <div class="news-item">
-    <div class="news-header">
-      <span class="news-type">Publication</span>
-      <span class="news-year">2025</span>
-    </div>
-    <div class="news-title">
-      <a href="YOUR_LINK" target="_blank">
-        4 papers at IEEE EMBC 2025
-      </a>
-    </div>
-    <div class="news-desc">
-      Medical AI & representation learning.
-    </div>
-  </div>
-
 </section>
-
-
 
       
 
