@@ -423,43 +423,53 @@ body{
 }
 
 
-
-  .news-list{
+.news-list{
   display:flex;
   flex-direction:column;
-  gap:26px;
+  gap:34px;
+  margin-top:20px;
 }
 
 .news-item{
-  display:grid;
-  grid-template-columns:130px 1fr;
-  gap:20px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(35,87,132,.08);
 }
 
-.news-type{
-  font-size:13px;
-  letter-spacing:1px;
+.news-item:last-child{
+  border-bottom:none;
+}
+
+.news-label{
+  font-size:12px;
   text-transform:uppercase;
+  letter-spacing:1.5px;
   color:var(--muted);
+  margin-bottom:6px;
   font-weight:600;
 }
 
-.news-content strong{
-  font-size:18px;
+.news-title{
+  font-size:20px;
+  font-weight:600;
   color:var(--primary);
+  margin-bottom:6px;
 }
 
-.news-content a{
+.news-title a{
   color:var(--primary);
   text-decoration:none;
 }
 
-.news-content a:hover{
+.news-title a:hover{
   text-decoration:underline;
 }
 
+.news-desc{
+  font-size:15px;
+  color:#4b5563;
+  line-height:1.6;
+}
 
-  
   
 </style>
 </head>
@@ -514,30 +524,32 @@ body{
   <div class="news-list">
 
     <div class="news-item">
-      <div class="news-type">Conference</div>
-      <div class="news-content">
-        <strong>NLDL 2026, Tromsø</strong><br>
+      <div class="news-label">Conference</div>
+      <div class="news-title">NLDL 2026, Tromsø</div>
+      <div class="news-desc">
         Presented research at the Nordic Conference on Deep Learning.
       </div>
     </div>
 
     <div class="news-item">
-      <div class="news-type">Teaching</div>
-      <div class="news-content">
-        <strong>Teaching Assistant – Deep Learning</strong><br>
+      <div class="news-label">Teaching</div>
+      <div class="news-title">
+        Teaching Assistant – Deep Learning
+      </div>
+      <div class="news-desc">
         Graduate-level course, University of Copenhagen (2025).
       </div>
     </div>
 
     <div class="news-item">
-      <div class="news-type">Publication</div>
-      <div class="news-content">
-        <strong>
-          <a href="https://www.linkedin.com/posts/zahra-sobhaninia-48a146b9_embc2025-healthcare-biomedicalai-ugcPost-7354913351719645185-Qp7L"
-             target="_blank" rel="noopener">
-             4 papers at IEEE EMBC 2025
-          </a>
-        </strong><br>
+      <div class="news-label">Publication</div>
+      <div class="news-title">
+        <a href="https://www.linkedin.com/posts/zahra-sobhaninia-48a146b9_embc2025-healthcare-biomedicalai-ugcPost-7354913351719645185-Qp7L"
+           target="_blank" rel="noopener">
+           4 papers at IEEE EMBC 2025
+        </a>
+      </div>
+      <div class="news-desc">
         Medical AI & representation learning.
       </div>
     </div>
