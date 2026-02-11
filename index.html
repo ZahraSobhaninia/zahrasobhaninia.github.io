@@ -433,40 +433,51 @@ body{
   margin-bottom:40px;
 }
 
-.news-item{
+
+  .news-section h2{
+  font-size:22px;
+  font-weight:600;
+  color:var(--primary);
+  margin-bottom:36px;
+}
+
+.news-entry{
   margin-bottom:42px;
 }
 
-.news-meta{
+.news-type{
   font-size:12px;
   letter-spacing:1.5px;
   text-transform:uppercase;
-  color:#9aa3af;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+
+.news-title{
+  font-size:20px;
   font-weight:600;
+  color:#1f2937;
   margin-bottom:6px;
 }
 
-.news-heading{
-  font-size:22px;
-  font-weight:600;
-  color:#1f2937;
-  margin:0 0 8px 0;
-}
-
-.news-heading a{
-  color:#1f2937;
+.news-title a{
   text-decoration:none;
+  color:#1f2937;
 }
 
-.news-heading a:hover{
+.news-title a:hover{
   color:var(--primary);
 }
 
-.news-text{
+.news-desc{
   font-size:16px;
-  line-height:1.6;
   color:#4b5563;
-  margin:0;
+  line-height:1.6;
+}
+
+  .news-entry:not(:last-child){
+  padding-bottom:32px;
+  border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
   
@@ -516,41 +527,38 @@ body{
       </section>
 
 
+      
+<section class="section news-section">
+  <h2>Selected News</h2>
 
-      <section class="section news-section">
-  <h2 class="section-title">Selected News</h2>
-
-  <div class="news-item">
-    <div class="news-meta">Conference</div>
-    <h3 class="news-heading">NLDL 2026, Tromsø</h3>
-    <p class="news-text">
+  <div class="news-entry">
+    <div class="news-type">Conference</div>
+    <div class="news-title">NLDL 2026, Tromsø</div>
+    <div class="news-desc">
       Presented research at the Nordic Conference on Deep Learning.
-    </p>
+    </div>
   </div>
 
-  <div class="news-item">
-    <div class="news-meta">Teaching</div>
-    <h3 class="news-heading">Teaching Assistant – Deep Learning</h3>
-    <p class="news-text">
+  <div class="news-entry">
+    <div class="news-type">Teaching</div>
+    <div class="news-title">Teaching Assistant – Deep Learning</div>
+    <div class="news-desc">
       Graduate-level course, University of Copenhagen (2025).
-    </p>
+    </div>
   </div>
 
-  <div class="news-item">
-    <div class="news-meta">Publication</div>
-    <h3 class="news-heading">
-      <a href="https://www.linkedin.com/posts/zahra-sobhaninia-48a146b9_embc2025-healthcare-biomedicalai-ugcPost-7354913351719645185-Qp7L"
-         target="_blank" rel="noopener">
+  <div class="news-entry">
+    <div class="news-type">Publication</div>
+    <div class="news-title">
+      <a href="YOUR_LINK_HERE" target="_blank">
         4 papers at IEEE EMBC 2025
       </a>
-    </h3>
-    <p class="news-text">
+    </div>
+    <div class="news-desc">
       Medical AI & representation learning.
-    </p>
+    </div>
   </div>
-
 </section>
-
 
 
 
