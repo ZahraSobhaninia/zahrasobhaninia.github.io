@@ -424,58 +424,56 @@ body{
 
 
 
-  .activities-section h2{
-  font-size:22px;
+.activities{
+  max-width:700px;
+}
+
+.activities h2{
+  font-size:20px;
   font-weight:600;
-  margin-bottom:28px;
+  margin-bottom:18px;
   color:var(--primary);
 }
 
-.activity-item{
-  margin-bottom:28px;
-  padding-bottom:18px;
-  border-bottom:1px solid rgba(0,0,0,0.06);
+.item{
+  margin-bottom:18px;
 }
 
-.activity-header{
+.row{
   display:flex;
   justify-content:space-between;
-  font-size:12px;
-  letter-spacing:.5px;
+  font-size:11px;
   text-transform:uppercase;
-  color:#6b7280;
-  margin-bottom:6px;
+  letter-spacing:.6px;
+  color:#7a7a7a;
+  margin-bottom:4px;
 }
 
-.activity-title{
-  font-size:18px;
-  font-weight:600;
+.title{
+  font-size:16px;
+  font-weight:500;
   color:#1f2937;
   display:flex;
   align-items:center;
-  gap:14px;
-  margin-bottom:6px;
+  gap:10px;
 }
 
-.activity-link{
-  font-size:14px;
-  font-weight:500;
+.title a{
+  font-size:13px;
+  font-weight:400;
   color:var(--primary);
   text-decoration:none;
-  border-bottom:1px solid transparent;
-  transition:all .2s ease;
 }
 
-.activity-link:hover{
-  border-bottom:1px solid var(--primary);
+.title a:hover{
+  text-decoration:underline;
 }
 
-.activity-desc{
-  font-size:15px;
-  color:#4b5563;
-  line-height:1.5;
+.desc{
+  font-size:14px;
+  color:#555;
+  margin-top:2px;
 }
-
 
   
 </style>
@@ -616,60 +614,60 @@ body{
       </section>
 
 
+<section class="activities">
+  <h2>Academic Activities</h2>
 
-<section class="section">
-  <h2>Selected News</h2>
-
-  <div class="news-list">
-
-    <!-- NLDL -->
-    <div class="news-item">
-      <span class="news-tag">Conference</span>
-      <div class="news-content">
-        <strong>
-          <a href="#" target="_blank">
-            NLDL 2026, Tromsø
-          </a>
-        </strong>
-        <p>
-          Presented research at the Nordic Conference on Deep Learning.
-        </p>
-      </div>
+  <div class="item">
+    <div class="row">
+      <span class="type">Conference</span>
+      <span class="year">2026</span>
     </div>
 
-    <!-- Teaching -->
-    <div class="news-item">
-      <span class="news-tag">Teaching</span>
-      <div class="news-content">
-        <strong>
-          <a href="#" target="_blank">
-            Teaching Assistant – Deep Learning
-          </a>
-        </strong>
-        <p>
-          Graduate-level course, University of Copenhagen (2025).
-        </p>
-      </div>
+    <div class="title">
+      NLDL 2026, Tromsø
+      <a href="#" target="_blank">Details</a>
     </div>
 
-    <!-- EMBC -->
-    <div class="news-item">
-      <span class="news-tag">Publication</span>
-      <div class="news-content">
-        <strong>
-          <a href="https://www.linkedin.com/posts/zahra-sobhaninia-48a146b9_embc2025-healthcare-biomedicalai-ugcPost-7354913351719645185-Qp7L"
-             target="_blank">
-             4 papers at IEEE EMBC 2025
-          </a>
-        </strong>
-        <p>
-          Contributions on medical AI and representation learning.
-        </p>
-      </div>
+    <div class="desc">
+      Presented research at the Nordic Conference on Deep Learning.
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <span class="type">Teaching</span>
+      <span class="year">2025</span>
     </div>
 
+    <div class="title">
+      Teaching Assistant – Deep Learning
+      <a href="#" target="_blank">Course</a>
+    </div>
+
+    <div class="desc">
+      Graduate-level course, University of Copenhagen.
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <span class="type">Publication</span>
+      <span class="year">2025</span>
+    </div>
+
+    <div class="title">
+      4 papers at IEEE EMBC 2025
+      <a href="YOUR_LINK" target="_blank">Post</a>
+    </div>
+
+    <div class="desc">
+      Medical AI & representation learning.
+    </div>
   </div>
 </section>
+
+
+      
 
  
 <section class="section">
