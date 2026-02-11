@@ -421,83 +421,56 @@ body{
   .rf-cards{grid-template-columns:1fr}
   .rf-timeline{display:none}
 }
-
-.news-section{
-  margin-top:60px;
-}
-
-.section-title{
-  font-size:26px;
-  font-weight:600;
-  color:var(--primary);
-  margin-bottom:40px;
-}
-
-
- .news-section h2{
+.news-section h2{
   font-size:20px;
   font-weight:600;
   color:var(--primary);
-  margin-bottom:28px;
+  margin-bottom:32px;
 }
 
-/* grid layout */
-.news-grid{
-  display:grid;
-  gap:18px;
+.news-item{
+  margin-bottom:36px;
+  padding-bottom:24px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
 }
 
-/* card */
-.news-card{
-  padding:18px 20px;
-  border-radius:14px;
-  background:#ffffff;
-  border:1px solid rgba(0,0,0,0.06);
-  transition:all .2s ease;
-}
-
-.news-card:hover{
-  border-color:rgba(35,87,132,.25);
-  transform:translateY(-2px);
-}
-
-/* meta */
-.news-meta{
+.news-header{
+  display:flex;
+  justify-content:space-between;
   font-size:12px;
-  letter-spacing:.5px;
   text-transform:uppercase;
+  letter-spacing:.8px;
   color:var(--muted);
   margin-bottom:6px;
 }
 
-/* title */
 .news-title{
-  font-size:17px;
+  font-size:18px;
   font-weight:600;
   color:#1f2937;
   margin-bottom:6px;
 }
 
 .news-title a{
-  text-decoration:none;
   color:#1f2937;
+  text-decoration:none;
 }
 
 .news-title a:hover{
   color:var(--primary);
 }
 
-/* description */
 .news-desc{
-  font-size:14.5px;
+  font-size:15px;
+  line-height:1.6;
   color:#4b5563;
-  line-height:1.5;
 }
 
-  .news-card{
-  border-left:3px solid var(--primary);
+ .news-title{
+  font-size:17px;
+  font-weight:500;
 }
-
+ 
   
 </style>
 </head>
@@ -545,42 +518,48 @@ body{
       </section>
 
 
-      
-<section class="section news-section">
+<section class="news-section">
   <h2>Selected News</h2>
 
-  <div class="news-grid">
-
-    <div class="news-card">
-      <div class="news-meta">Conference · 2026</div>
-      <div class="news-title">NLDL 2026, Tromsø</div>
-      <div class="news-desc">
-        Presented research at the Nordic Conference on Deep Learning.
-      </div>
+  <div class="news-item">
+    <div class="news-header">
+      <span class="news-type">Conference</span>
+      <span class="news-year">2026</span>
     </div>
-
-    <div class="news-card">
-      <div class="news-meta">Teaching · 2025</div>
-      <div class="news-title">Teaching Assistant – Deep Learning</div>
-      <div class="news-desc">
-        Graduate-level course, University of Copenhagen.
-      </div>
+    <div class="news-title">NLDL 2026, Tromsø</div>
+    <div class="news-desc">
+      Presented research at the Nordic Conference on Deep Learning.
     </div>
-
-    <div class="news-card">
-      <div class="news-meta">Publication · 2025</div>
-      <div class="news-title">
-        <a href="YOUR_LINK" target="_blank">
-          4 papers at IEEE EMBC 2025
-        </a>
-      </div>
-      <div class="news-desc">
-        Medical AI & representation learning.
-      </div>
-    </div>
-
   </div>
+
+  <div class="news-item">
+    <div class="news-header">
+      <span class="news-type">Teaching</span>
+      <span class="news-year">2025</span>
+    </div>
+    <div class="news-title">Teaching Assistant – Deep Learning</div>
+    <div class="news-desc">
+      Graduate-level course, University of Copenhagen.
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-header">
+      <span class="news-type">Publication</span>
+      <span class="news-year">2025</span>
+    </div>
+    <div class="news-title">
+      <a href="YOUR_LINK" target="_blank">
+        4 papers at IEEE EMBC 2025
+      </a>
+    </div>
+    <div class="news-desc">
+      Medical AI & representation learning.
+    </div>
+  </div>
+
 </section>
+
 
 
       
