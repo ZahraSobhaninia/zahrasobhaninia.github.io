@@ -904,10 +904,24 @@ body{
 </div>
 
 <section class="stats-section">
-  ...
+   <h2 class="section-title">Publications</h2>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <h3>Papers per Year</h3>
+      <canvas id="papersChart"></canvas>
+    </div>
+
+    <div class="stat-card">
+      <h3>Authorship</h3>
+      <canvas id="authorshipChart"></canvas>
+    </div>
+
+  </div>
+
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
 const papersCtx = document.getElementById('papersChart');
