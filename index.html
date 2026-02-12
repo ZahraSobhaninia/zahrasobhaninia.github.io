@@ -492,39 +492,39 @@ body{
   color:#555;
 }
 
-
-
-
-  .selected-research {
+.publications-section {
   margin-top: 60px;
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 30px;
-}
-
-
-
-  .research-section {
-  margin-top: 80px;
+  margin-bottom: 32px;
 }
 
 .paper {
   display: flex;
-  gap: 30px;
-  padding: 26px 0;
-  border-bottom: 1px solid #e6eaf0;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e8edf3;
 }
 
 .paper-year {
-  min-width: 60px;
+  min-width: 70px;
   font-size: 14px;
   color: #7a869a;
   font-weight: 500;
-  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.year-dot {
+  width: 6px;
+  height: 6px;
+  background: #e58e26;
+  border-radius: 50%;
 }
 
 .paper-content {
@@ -534,44 +534,37 @@ body{
 .paper-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 20px;
+  align-items: center;
 }
 
 .paper-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  color: #2c3e50;
   margin: 0;
 }
 
-.paper-description {
-  font-size: 14px;
-  color: #6b778c;
-  margin: 10px 0 12px 0;
-  line-height: 1.6;
+.paper-title a {
+  text-decoration: none;
+  color: #2c3e50;
+  transition: color 0.2s ease;
+}
+
+.paper-title a:hover {
+  color: #e58e26;
 }
 
 .paper-citations {
-  font-size: 12px;
+  font-size: 13px;
   color: #7a869a;
   background: rgba(44, 62, 80, 0.06);
-  padding: 4px 12px;
+  padding: 4px 10px;
   border-radius: 14px;
-  white-space: nowrap;
 }
 
-.paper-link {
-  font-size: 14px;
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
+.paper-citations.recent {
+  background: rgba(229, 142, 38, 0.12);
+  color: #c96f00;
 }
-
-.paper-link:hover {
-  text-decoration: underline;
-}
-
 
   
 </style>
@@ -759,145 +752,106 @@ body{
   </div>
 </section>
       
-<section class="research-section">
+
+
+
+
+
+
+
+
+
+
+      <section class="publications-section">
 
   <h2 class="section-title">Selected Research</h2>
 
   <div class="paper">
-
-    <div class="paper-year">2019</div>
-
+    <div class="paper-year">
+      <span class="year-dot"></span> 2019
+    </div>
     <div class="paper-content">
       <div class="paper-header">
         <h3 class="paper-title">
-          Fetal Ultrasound Image Segmentation Using Multi-Task Deep Learning
+          <a href="https://ieeexplore.ieee.org/abstract/document/8856981" target="_blank">
+            Fetal Ultrasound Image Segmentation Using Multi-Task Deep Learning
+          </a>
         </h3>
-        <span class="paper-citations">156 citations</span>
+        <span class="paper-citations">156</span>
       </div>
-
- 
-      <a href="https://ieeexplore.ieee.org/abstract/document/8856981"
-         target="_blank"
-         class="paper-link">
-        View publication →
-      </a>
     </div>
-
   </div>
 
-
   <div class="paper">
-
-    <div class="paper-year">2018</div>
-
+    <div class="paper-year">
+      <span class="year-dot"></span> 2018
+    </div>
     <div class="paper-content">
       <div class="paper-header">
         <h3 class="paper-title">
-          Brain Tumor Segmentation Using Type-Specific Sorting of Images
+          <a href="https://arxiv.org/abs/1809.07786" target="_blank">
+            Brain Tumor Segmentation Using Type-Specific Sorting of Images
+          </a>
         </h3>
-        <span class="paper-citations">125 citations</span>
+        <span class="paper-citations">125</span>
       </div>
-
-
-
-      <a href="https://arxiv.org/abs/1809.07786"
-         target="_blank"
-         class="paper-link">
-        View publication →
-      </a>
     </div>
-
   </div>
 
-
   <div class="paper">
-
-    <div class="paper-year">2022</div>
-
+    <div class="paper-year">
+      <span class="year-dot"></span> 2022
+    </div>
     <div class="paper-content">
       <div class="paper-header">
         <h3 class="paper-title">
-          RLMD-PA: Reinforcement Learning-Based Myocarditis Diagnosis
+          <a href="https://onlinelibrary.wiley.com/doi/full/10.1155/2022/8733632" target="_blank">
+            RLMD-PA: Reinforcement Learning-Based Myocarditis Diagnosis
+          </a>
         </h3>
-        <span class="paper-citations">77 citations</span>
+        <span class="paper-citations">77</span>
       </div>
-
-
-      <a href="https://onlinelibrary.wiley.com/doi/full/10.1155/2022/8733632"
-         target="_blank"
-         class="paper-link">
-        View publication →
-      </a>
     </div>
-
   </div>
 
-
   <div class="paper">
-
-    <div class="paper-year">2023</div>
-
+    <div class="paper-year">
+      <span class="year-dot"></span> 2023
+    </div>
     <div class="paper-content">
       <div class="paper-header">
         <h3 class="paper-title">
-          Brain Tumor Segmentation by Cascaded Multiscale Multitask Framework
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809423002677" target="_blank">
+            Brain Tumor Segmentation by Cascaded Multiscale Multitask Framework
+          </a>
         </h3>
-        <span class="paper-citations">31 citations</span>
+        <span class="paper-citations">31</span>
       </div>
-
-
-      <a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809423002677"
-         target="_blank"
-         class="paper-link">
-        View publication →
-      </a>
     </div>
-
   </div>
 
-
   <div class="paper">
-
-    <div class="paper-year">2025</div>
-
+    <div class="paper-year">
+      <span class="year-dot"></span> 2025
+    </div>
     <div class="paper-content">
       <div class="paper-header">
         <h3 class="paper-title">
-          BONSAI: Transformer-Based Framework for Electronic Health Records
+          <a href="https://joss.theoj.org/papers/10.21105/joss.08869.pdf" target="_blank">
+            BONSAI: Transformer-Based Framework for Electronic Health Records
+          </a>
         </h3>
-        <span class="paper-citations">Recent</span>
+        <span class="paper-citations recent">Recent</span>
       </div>
-
-
-      <a href="https://joss.theoj.org/papers/10.21105/joss.08869.pdf"
-         target="_blank"
-         class="paper-link">
-        View publication →
-      </a>
     </div>
-
   </div>
 
 </section>
 
-      
+
+
 
       
-    <!-- RIGHT -->
-    <div>
-      <div class="chart-box">
-        <canvas id="papersChart"></canvas>
-      </div>
-      <div class="chart-box">
-        <canvas id="citationsChart"></canvas>
-      </div>
-    </div>
-
-  </div>
-
-
-        
-</section>
 
     </div>
   </main>
