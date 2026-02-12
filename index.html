@@ -494,59 +494,49 @@ body{
 
 
 
-
-
   .publications {
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
 .section-title {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
-.pub-item {
-  display: flex;
-  gap: 30px;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  position: relative;
-  transition: all 0.25s ease;
+.pub-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 25px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
 }
 
-.pub-item:hover {
-  transform: translateX(6px);
+.pub-card:hover {
+  transform: translateX(8px);
 }
 
-.pub-item::before {
-  content: "";
-  position: absolute;
-  left: -12px;
-  top: 24px;
-  width: 6px;
-  height: 6px;
-  background: var(--primary);
-  border-radius: 50%;
-  opacity: 0.6;
-}
-
-.pub-meta {
-  min-width: 60px;
+.pub-year {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: rgba(0,0,0,0.45);
+  letter-spacing: 1px;
 }
 
-.pub-title {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.45;
+.pub-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
   color: #1f2937;
 }
 
-
+.pub-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.65);
+}
 
 
   
@@ -737,55 +727,58 @@ body{
       
 
 <section class="publications">
-  <h2 class="section-title">Selected Publications</h2>
+  <h2 class="section-title">Research Highlights</h2>
 
-  <div class="pub-item">
-    <div class="pub-meta">2019</div>
-    <div class="pub-main">
-      <div class="pub-title">
-        Fetal Ultrasound Image Segmentation Using Multi-Task Deep Learning
-      </div>
+  <div class="pub-card">
+    <div class="pub-year">2019</div>
+    <div class="pub-content">
+      <h3>Fetal Ultrasound Image Segmentation Using Multi-Task Deep Learning</h3>
+      <p>
+        Early work introducing multi-task learning for robust biometric
+        parameter estimation in fetal ultrasound imaging.
+      </p>
     </div>
   </div>
 
-  <div class="pub-item">
-    <div class="pub-meta">2018</div>
-    <div class="pub-main">
-      <div class="pub-title">
-        Brain Tumor Segmentation Using Type-Specific Sorting of Images
-      </div>
+  <div class="pub-card">
+    <div class="pub-year">2022</div>
+    <div class="pub-content">
+      <h3>RLMD-PA: Reinforcement Learning-Based Myocarditis Diagnosis</h3>
+      <p>
+        Integrating reinforcement learning and population-based pretraining
+        for improved clinical decision support.
+      </p>
     </div>
   </div>
 
-  <div class="pub-item">
-    <div class="pub-meta">2022</div>
-    <div class="pub-main">
-      <div class="pub-title">
-        RLMD-PA: Reinforcement Learning-Based Myocarditis Diagnosis
-      </div>
+  <div class="pub-card">
+    <div class="pub-year">2023</div>
+    <div class="pub-content">
+      <h3>Brain Tumor Segmentation by Cascaded Multiscale Framework</h3>
+      <p>
+        A cascaded multitask architecture for enhanced segmentation
+        performance across heterogeneous MRI datasets.
+      </p>
     </div>
   </div>
 
-  <div class="pub-item">
-    <div class="pub-meta">2023</div>
-    <div class="pub-main">
-      <div class="pub-title">
-        Brain Tumor Segmentation by Cascaded Multiscale Multitask Framework
-      </div>
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <div class="pub-meta">2025</div>
-    <div class="pub-main">
-      <div class="pub-title">
-        BONSAI: Transformer-Based Framework for Electronic Health Records
-      </div>
+  <div class="pub-card">
+    <div class="pub-year">2025</div>
+    <div class="pub-content">
+      <h3>BONSAI: Transformer Framework for Electronic Health Records</h3>
+      <p>
+        A modular transformer-based pipeline for scalable EHR processing
+        and representation learning.
+      </p>
     </div>
   </div>
 
 </section>
 
+
+
+
+      
     <!-- RIGHT -->
     <div>
       <div class="chart-box">
