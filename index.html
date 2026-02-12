@@ -573,61 +573,42 @@ body{
 
 
 
-  /* ===== 3 COLUMN GRID ===== */
-.stats-grid-3{
+
+
+  /* ===== CLEAN STATS SECTION ===== */
+
+.stats-section{
+  margin-top:60px;
+  padding-top:20px;
+  border-top:1px solid #e6ecf2;
+}
+
+.stats-grid-clean{
   display:grid;
-  grid-template-columns: repeat(3,1fr);
-  gap:26px;
-  margin-top:24px;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  margin-top:30px;
 }
 
-.stat-card{
-  padding:26px;
-  border-radius:22px;
-  height:320px;
-  box-shadow:0 8px 25px rgba(35,87,132,.08);
-  transition:.3s ease;
+.chart-block{
+  display:flex;
+  flex-direction:column;
 }
 
-.stat-card:hover{
-  transform:translateY(-6px);
-}
-
-.stat-card h3{
+.chart-block h3{
   font-size:15px;
-  margin-bottom:16px;
   font-weight:600;
+  margin-bottom:18px;
+  color:#2c3e50;
 }
 
-.stat-card canvas{
+.chart-block canvas{
   width:100% !important;
-  height:240px !important;
-}
-
-/* ===== Pastel Themes ===== */
-
-.pastel-blue{
-  background:linear-gradient(145deg,#f0f7ff,#e6f1fb);
-}
-
-.pastel-purple{
-  background:linear-gradient(145deg,#f5f1ff,#ece6fb);
-}
-
-.pastel-peach{
-  background:linear-gradient(145deg,#fff4ed,#fde8d9);
-}
-
-/* responsive */
-@media(max-width:1100px){
-  .stats-grid-3{
-    grid-template-columns:1fr;
-  }
+  height:260px !important;
 }
 
 
   
-
 
   
 </style>
@@ -912,18 +893,21 @@ body{
 </section>
 
 
-      <section class="stats-section">
+
+
+      
+<section class="stats-section">
 
   <h2 class="section-title">Publications Overview</h2>
 
-  <div class="stats-grid-3">
+  <div class="stats-grid-clean">
 
-    <div class="stat-card pastel-blue">
+    <div class="chart-block">
       <h3>Papers per Year</h3>
       <canvas id="papersChart"></canvas>
     </div>
 
-    <div class="stat-card pastel-purple">
+    <div class="chart-block">
       <h3>Citations per Year</h3>
       <canvas id="citationsChart"></canvas>
     </div>
@@ -931,6 +915,12 @@ body{
   </div>
 
 </section>
+
+
+
+
+
+      
       <script>
 
       document.addEventListener("DOMContentLoaded", function(){
@@ -952,9 +942,9 @@ if (papersCtx) {
       labels:['2019','2020','2021','2022','2023','2024','2025'],
       datasets:[{
         data:[3,4,2,3,2,1,6],
-        backgroundColor:gradient,
-        borderRadius:12,
-        borderSkipped:false
+        backgroundColor: 'rgba(59,130,246,0.35)',
+        borderRadius: 6,
+        borderSkipped: false
       }]
     },
     options:{
@@ -978,12 +968,12 @@ if (citationsCtx) {
     data:{
       labels:['2019','2020','2021','2022','2023','2024','2025'],
       datasets:[{
-        data:[10,45,60,95,105,135,139],
-        borderColor:'#8b5cf6',
-        backgroundColor:'rgba(139,92,246,.15)',
-        tension:.4,
+        data:[7,42,69,98,101,137,138],
+        borderColor:'#235784',
+        backgroundColor:'rgba(35,87,132,0.08)',
+        tension:.35,
         fill:true,
-        pointRadius:4
+        pointRadius:3
       }]
     },
     options:{
