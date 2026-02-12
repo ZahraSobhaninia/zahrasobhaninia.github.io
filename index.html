@@ -923,24 +923,7 @@ body{
 
 </div>
 
-<section class="stats-section">
-   <h2 class="section-title">Publications</h2>
-
-  <div class="stats-grid">
-
-    <div class="stat-card">
-      <h3>Papers per Year</h3>
-      <canvas id="papersChart"></canvas>
-    </div>
-
-    <div class="stat-card">
-      <h3>Authorship</h3>
-      <canvas id="authorshipChart"></canvas>
-    </div>
-
-  </div>
-
-<section class="stats-section">
+    <section class="stats-section">
 
   <h2 class="section-title">Publications Overview</h2>
 
@@ -978,10 +961,7 @@ body{
   </div>
 
 </section>
-
-
-  </main>
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", function(){
 
 const papersCtx = document.getElementById('papersChart');
@@ -1001,7 +981,7 @@ if (papersCtx) {
       datasets:[{
         data:[3,4,2,3,2,1,6],
         backgroundColor: gradient,
-        borderRadius:8,
+        borderRadius:10,
         borderSkipped:false
       }]
     },
@@ -1045,8 +1025,5 @@ if (citationsCtx) {
 
 });
 </script>
-
 </body>
-</html>
-
-
+  </div>
