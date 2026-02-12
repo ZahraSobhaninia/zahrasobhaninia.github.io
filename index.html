@@ -943,9 +943,10 @@ if (papersCtx) {
       labels:['2019','2020','2021','2022','2023','2024','2025'],
       datasets:[{
         data:[3,4,2,3,2,1,6],
-        backgroundColor: 'rgba(59,130,246,0.35)',
-        borderRadius: 6,
-        borderSkipped: false
+        backgroundColor:'#7FB3D5',
+        borderRadius:8,
+        borderSkipped:false,
+        hoverBackgroundColor:'#F4A261'
       }]
     },
    options:{
@@ -978,11 +979,14 @@ if (citationsCtx) {
       labels:['2019','2020','2021','2022','2023','2024','2025'],
       datasets:[{
         data:[7,42,69,98,101,137,138],
-        borderColor:'#235784',
-        backgroundColor:'rgba(35,87,132,0.08)',
-        tension:.35,
+        borderColor:'#2A9D8F',
+        backgroundColor:'rgba(42,157,143,0.12)',
+        tension:.4,
         fill:true,
-        pointRadius:3
+        pointRadius:3,
+        pointBackgroundColor:'#2A9D8F',
+        pointHoverRadius:5,
+        borderWidth:2
       }]
     },
 options:{
