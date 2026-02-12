@@ -496,68 +496,70 @@ body{
 
 
 
-  .research-highlights {
-  margin-top: 60px;
+  .publications {
+  margin-top: 70px;
 }
 
-.section-title {
-  font-size: 26px;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 40px;
-}
-
-.highlight-item {
-  display: flex;
-  gap: 25px;
+.pub-item {
+  display: grid;
+  grid-template-columns: 80px 20px 1fr;
+  align-items: start;
   padding: 24px 0;
-  border-left: 3px solid var(--primary);
-  padding-left: 20px;
-  transition: background 0.2s ease;
+  position: relative;
 }
 
-.highlight-item:hover {
-  background: rgba(0, 0, 0, 0.02);
-}
-
-.year-badge {
-  font-size: 13px;
+.pub-year {
+  font-size: 14px;
   font-weight: 600;
   color: var(--primary);
-  min-width: 50px;
-  margin-top: 6px;
 }
 
-.highlight-content h3 {
+.pub-dot {
+  width: 10px;
+  height: 10px;
+  background: #e58b2a; /* همون نارنجی تایم‌لاین */
+  border-radius: 50%;
+  margin-top: 6px;
+  position: relative;
+}
+
+.pub-dot::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 1px;
+  height: calc(100% + 20px);
+  background: rgba(0,0,0,0.1);
+  transform: translateX(-50%);
+}
+
+.pub-content h3 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
-.highlight-content h3 a {
+.pub-content h3 a {
   text-decoration: none;
   color: #1f2937;
   transition: color 0.2s ease;
 }
 
-.highlight-content h3 a:hover {
+.pub-content h3 a:hover {
   color: var(--primary);
 }
 
-.highlight-content p {
+.pub-content p {
   font-size: 14px;
   line-height: 1.6;
   color: rgba(0,0,0,0.7);
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
-.citation-pill {
-  display: inline-block;
+.pub-citations {
   font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: rgba(0,0,0,0.05);
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,0.5);
 }
 
 
@@ -754,56 +756,56 @@ body{
 
 
 
+      <section class="publications">
+  <h2 class="section-title">Selected Publications</h2>
 
-      <section class="research-highlights">
-  <h2 class="section-title">Research Highlights</h2>
-
-  <div class="highlight-item">
-    <div class="year-badge">2019</div>
-    <div class="highlight-content">
+  <div class="pub-item">
+    <div class="pub-year">2019</div>
+    <div class="pub-dot"></div>
+    <div class="pub-content">
       <h3>
         <a href="#" target="_blank">
           Fetal Ultrasound Image Segmentation Using Multi-Task Deep Learning
         </a>
       </h3>
       <p>
-        Early work introducing multi-task learning for robust biometric
-        parameter estimation in fetal ultrasound imaging.
+        Multi-task learning for robust biometric parameter estimation in fetal ultrasound imaging.
       </p>
-      <span class="citation-pill">156 citations</span>
+      <span class="pub-citations">156 citations</span>
     </div>
   </div>
 
-  <div class="highlight-item">
-    <div class="year-badge">2022</div>
-    <div class="highlight-content">
+  <div class="pub-item">
+    <div class="pub-year">2022</div>
+    <div class="pub-dot"></div>
+    <div class="pub-content">
       <h3>
         <a href="#" target="_blank">
           RLMD-PA: Reinforcement Learning-Based Myocarditis Diagnosis
         </a>
       </h3>
       <p>
-        Integrating reinforcement learning and population-based pretraining
-        for improved clinical decision support.
+        Integrating reinforcement learning and population-based pretraining for improved clinical decision support.
       </p>
     </div>
   </div>
 
-  <div class="highlight-item">
-    <div class="year-badge">2025</div>
-    <div class="highlight-content">
+  <div class="pub-item">
+    <div class="pub-year">2025</div>
+    <div class="pub-dot"></div>
+    <div class="pub-content">
       <h3>
         <a href="#" target="_blank">
           BONSAI: Transformer Framework for Electronic Health Records
         </a>
       </h3>
       <p>
-        A modular transformer-based pipeline for scalable EHR processing
-        and representation learning.
+        A modular transformer-based pipeline for scalable EHR processing and representation learning.
       </p>
     </div>
   </div>
 </section>
+
 
       
 
