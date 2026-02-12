@@ -493,54 +493,63 @@ body{
 }
 
 
-.publications {
-  margin-top: 60px;
+
+
+
+  .publications {
+  margin-top: 70px;
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
-.publication-item {
+.pub-item {
   display: flex;
-  gap: 24px;
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  transition: all 0.2s ease;
+  gap: 30px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+  transition: all 0.25s ease;
 }
 
-.publication-item:hover {
-  transform: translateX(4px);
+.pub-item:hover {
+  transform: translateX(6px);
 }
 
-.pub-year {
+.pub-item::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 24px;
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.pub-meta {
   min-width: 60px;
   font-size: 14px;
-  color: rgba(0,0,0,0.45);
   font-weight: 500;
-}
-
-.pub-content {
-  flex: 1;
+  color: rgba(0,0,0,0.45);
 }
 
 .pub-title {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
+  line-height: 1.45;
   color: #1f2937;
-  margin-bottom: 6px;
-  line-height: 1.4;
 }
 
-.pub-venue {
-  font-size: 14px;
-  color: rgba(0,0,0,0.55);
-  font-style: italic;
-}
 
+
+
+  
 </style>
 </head>
 
@@ -727,76 +736,56 @@ body{
 </section>
       
 
-
-
-
-      <section class="publications">
+<section class="publications">
   <h2 class="section-title">Selected Publications</h2>
 
-  <div class="publication-item">
-    <div class="pub-year">2019</div>
-    <div class="pub-content">
+  <div class="pub-item">
+    <div class="pub-meta">2019</div>
+    <div class="pub-main">
       <div class="pub-title">
         Fetal Ultrasound Image Segmentation Using Multi-Task Deep Learning
       </div>
-      <div class="pub-venue">
-        IEEE EMBS
-      </div>
     </div>
   </div>
 
-  <div class="publication-item">
-    <div class="pub-year">2018</div>
-    <div class="pub-content">
+  <div class="pub-item">
+    <div class="pub-meta">2018</div>
+    <div class="pub-main">
       <div class="pub-title">
         Brain Tumor Segmentation Using Type-Specific Sorting of Images
       </div>
-      <div class="pub-venue">
-        arXiv
-      </div>
     </div>
   </div>
 
-  <div class="publication-item">
-    <div class="pub-year">2022</div>
-    <div class="pub-content">
+  <div class="pub-item">
+    <div class="pub-meta">2022</div>
+    <div class="pub-main">
       <div class="pub-title">
         RLMD-PA: Reinforcement Learning-Based Myocarditis Diagnosis
       </div>
-      <div class="pub-venue">
-        Contrast Media & Molecular Imaging
-      </div>
     </div>
   </div>
 
-  <div class="publication-item">
-    <div class="pub-year">2023</div>
-    <div class="pub-content">
+  <div class="pub-item">
+    <div class="pub-meta">2023</div>
+    <div class="pub-main">
       <div class="pub-title">
         Brain Tumor Segmentation by Cascaded Multiscale Multitask Framework
       </div>
-      <div class="pub-venue">
-        Biomedical Signal Processing and Control
-      </div>
     </div>
   </div>
 
-  <div class="publication-item">
-    <div class="pub-year">2025</div>
-    <div class="pub-content">
+  <div class="pub-item">
+    <div class="pub-meta">2025</div>
+    <div class="pub-main">
       <div class="pub-title">
         BONSAI: Transformer-Based Framework for Electronic Health Records
-      </div>
-      <div class="pub-venue">
-        Journal of Open Source Software
       </div>
     </div>
   </div>
 
 </section>
 
-
-      
     <!-- RIGHT -->
     <div>
       <div class="chart-box">
