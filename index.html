@@ -566,6 +566,33 @@ body{
    color: #7a869a;
 }
 
+
+
+
+  .stats-section {
+  margin-top: 60px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.stat-card {
+  background: #f5f7fa;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.stat-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #2c3e50;
+}
+
   
 </style>
 </head>
@@ -858,24 +885,90 @@ body{
 
 </div>
 <script>
-new Chart(papersChart,{
-  type:'bar',
-  data:{
-    labels:['2019','2020','2021','2022','2023','2024','2025'],
-    datasets:[{data:[3,4,2,3,2,1,6],backgroundColor:'#f48c06'}]
+new Chart(papersChart, {
+  type: 'bar',
+  data: {
+    labels: ['2019','2020','2021','2022','2023','2024','2025'],
+    datasets: [{
+      data: [3,4,2,3,2,1,6],
+      backgroundColor: '#cfe4f2',
+      borderRadius: 8,
+      borderSkipped: false
+    }]
   },
-  options:{plugins:{legend:{display:false}}}
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        grid: { display: false }
+      },
+      y: {
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { display: false }
+      }
+    },
+    plugins: {
+      legend: { display: false }
+    }
+  }
 });
 
-new Chart(citationsChart,{
-  type:'bar',
-  data:{
-    labels:['2019','2020','2021','2022','2023','2024','2025'],
-    datasets:[{data:[10,45,60,95,105,135,139],backgroundColor:'#76b5c5'}]
+  new Chart(authorshipChart, {
+  type: 'doughnut',
+  data: {
+    labels: ['First','Last','Middle'],
+    datasets: [{
+      data: [35,45,20],
+      backgroundColor: [
+        '#cfe4f2',
+        '#cde8d5',
+        '#f6d3b8'
+      ],
+      borderWidth: 0
+    }]
   },
-  options:{plugins:{legend:{display:false}}}
+  options: {
+    cutout: '65%',
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+          boxWidth: 12,
+          padding: 15
+        }
+      }
+    }
+  }
 });
+
 </script>
 
+
+
+
+  <section class="stats-section">
+
+  <h2 class="section-title">Publications</h2>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <h3>Papers per Year</h3>
+      <canvas id="papersChart"></canvas>
+    </div>
+
+    <div class="stat-card">
+      <h3>Authorship</h3>
+      <canvas id="authorshipChart"></canvas>
+    </div>
+
+  </div>
+
+</section>
+
+
+  
+
+  
 </body>
 </html>
