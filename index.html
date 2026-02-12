@@ -898,17 +898,18 @@ body{
 </section>
 
 
-
-
-      
-
     </div>
   </main>
 
 </div>
 
+<section class="stats-section">
+  ...
+</section>
 
-  <script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
 const papersCtx = document.getElementById('papersChart');
 const authorshipCtx = document.getElementById('authorshipChart');
 
@@ -956,11 +957,7 @@ if (authorshipCtx) {
       cutout: '65%',
       plugins: {
         legend: {
-          position: 'bottom',
-          labels: {
-            boxWidth: 12,
-            padding: 15
-          }
+          position: 'bottom'
         }
       }
     }
@@ -968,31 +965,7 @@ if (authorshipCtx) {
 }
 </script>
 
-  
-
-  <section class="stats-section">
-
-  <h2 class="section-title">Publications</h2>
-
-  <div class="stats-grid">
-
-    <div class="stat-card">
-      <h3>Papers per Year</h3>
-      <canvas id="papersChart"></canvas>
-    </div>
-
-    <div class="stat-card">
-      <h3>Authorship</h3>
-      <canvas id="authorshipChart"></canvas>
-    </div>
-
-  </div>
-
-</section>
-
-
-  
-
-  
 </body>
 </html>
+
+
